@@ -1,0 +1,251 @@
+{
+  "main": {
+    "id": "2ed26cd5841e619c",
+    "type": "split",
+    "children": [
+      {
+        "id": "29bce91bbd5dbae5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bb7febcea0371bc8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03. Offer (3.16~)/agent design principle.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "agent design principle"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "24d458e067150bc2",
+    "type": "split",
+    "children": [
+      {
+        "id": "d1599079464bdec5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "92f4f3cdf55054c3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "f67bd6667e62c58b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0047c0b37948fc5e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          },
+          {
+            "id": "4c93bcc8051127a9",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {},
+              "icon": "layout-grid",
+              "title": "Navigator"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 370.5
+  },
+  "right": {
+    "id": "ec5306b7488e05d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "c3174fc1d06b281b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b56bb3a3e793e3bd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "0. Onboarding Study (2.10~)/생각의 흐름 정리.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 생각의 흐름 정리"
+            }
+          },
+          {
+            "id": "9d9ea7a7407b7d96",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Welcome"
+            }
+          },
+          {
+            "id": "130a13dc3f54a6ef",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "10bfbde4640c4d95",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "9a85be478fc6b4f0",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Welcome"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false,
+      "callout-manager:Insert Callout": false,
+      "obsidian-kanban:Create new board": false,
+      "webpage-html-export:Export as HTML": false,
+      "github-sync:Sync with Remote": false
+    }
+  },
+  "active": "4c93bcc8051127a9",
+  "lastOpenFiles": [
+    "03. Offer (3.16~)/walk-through principle.md",
+    "03. Offer (3.16~)/agent design principle.md",
+    "03. Offer (3.16~)/03. Offer (3.16~).md",
+    "03. Offer (3.16~)/persona + blueprint.md",
+    "03. Offer (3.16~)/MVP.md",
+    "03. Offer (3.16~)/image/image.md",
+    "03. Offer (3.16~)/설계원칙 + 경영정보에이전트 구조.md",
+    "03. Offer (3.16~)/action item.md",
+    "03. Offer (3.16~)/에이전트 플랫폼 전략.md",
+    "03. Offer (3.16~)/image/Untitled-1773732232939.png",
+    "03. Offer (3.16~)/scrap.md",
+    "note/temp.md",
+    "note/note.md",
+    "note/roe.md",
+    "note/lee.md",
+    "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
+    "03. Offer (3.16~)/image/action item-1773712295756.png",
+    "03. Offer (3.16~)/오퍼 구조 및 실행 과제.md",
+    "03. Offer (3.16~)/image/action item-1773652513569.png",
+    "03. Offer (3.16~)/image/무제-1773649985842.png",
+    "03. Offer (3.16~)/image/scrap-1773649925088.png",
+    "03. Offer (3.16~)/image",
+    "03. Offer (3.16~)/image/Untitled-1773637790653.png",
+    "03. Offer (3.16~)/image/Untitled-1773636965866.png",
+    "03. Offer (3.16~)/image/Untitled-1773636308743.png",
+    "01. Study 확장 (2.23~)/간담회준비/간담회준비.md",
+    "01. Study 확장 (2.23~)/간담회준비/구조.md",
+    "01. Study 확장 (2.23~)/간담회준비/전략.md",
+    "note/농정 시연 기록.md",
+    "00. Onboarding Study (2.10~)/00. Onboarding Study (2.10~).md",
+    "02. SK Chemical (3.6~)/02. SK Chemical (3.6~).md",
+    "03. Offer (3.16~)",
+    "02. SK Chemical (3.6~)/제안서 구조 변경.md",
+    "02. SK Chemical (3.6~)/스토리라인 latest.md",
+    "02. SK Chemical (3.6~)/SK sdlc 표준 운영.md",
+    "02. SK Chemical (3.6~)/방법론.md",
+    "02. SK Chemical (3.6~)/스토리라인 old.md",
+    "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)",
+    "2. SK Chemical (3.6~)/Draft(세부 항목들 임의 작성함)-1773030614962.png",
+    "02. SK Chemical (3.6~)/image",
+    "02. SK Chemical (3.6~)",
+    "99. 개념",
+    "01. Study 확장 (2.23~)/간담회준비",
+    "01. Study 확장 (2.23~)",
+    "note",
+    ".md",
+    "Untitled.canvas"
+  ]
+}

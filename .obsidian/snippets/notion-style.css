@@ -1,0 +1,171 @@
+/* =================================================================
+   옵시디언 노션 스타일 V2 (폰트 강제 적용 수정판)
+   ================================================================= */
+
+/* 1. 폰트 강제 적용 (가장 강력한 우선순위) */
+:root, body, .app-container {
+  --default-font: 'S-Core Dream', '에스코어 드림', 'Pretendard', sans-serif !important;
+  --font-text: var(--default-font) !important;
+  --font-interface: var(--default-font) !important;
+  --font-monospace: 'S-Core Dream', '에스코어 드림', monospace !important; /* 코드 블록도 드림체 원하면 유지, 아니면 이 줄 삭제 */
+}
+
+/* 에디터(편집 모드 & 라이브 프리뷰) 폰트 강제 지정 */
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-source-view .cm-line {
+  font-family: var(--default-font) !important;
+}
+
+/* 읽기 모드(프리뷰) 폰트 강제 지정 */
+.markdown-preview-view {
+  font-family: var(--default-font) !important;
+}
+
+/* 2. 본문 너비 및 정렬 (노션 스타일) */
+:root {
+  --file-line-width: 900px; /* 줄 길이 제한 */
+}
+
+/* 3. 색상 팔레트 (노션 감성) */
+.theme-light {
+  --text-normal: #37352f;
+  --text-muted: #787774;
+  --background-primary: #ffffff;
+  --background-secondary: #f7f6f3;
+}
+
+/* 4. 제목 스타일 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--default-font) !important;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
+  color: var(--text-normal);
+}
+
+/* 5. 특수 요소 스타일 (노션 따라하기) */
+
+/* 인용문 */
+blockquote {
+  border-left: 3px solid currentcolor;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  font-style: normal;
+  color: var(--text-normal);
+}
+
+/* 콜아웃 박스 */
+.callout {
+  background-color: #f1f1ef;
+  border: none;
+  border-radius: 4px;
+  color: var(--text-normal);
+}
+.theme-dark .callout { background-color: #262626; }
+
+/* 체크박스 */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #9b9a97;
+  border-radius: 3px;
+  margin-right: 6px;
+  position: relative;
+  top: 3px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  background-color: #2eaadc;
+  border-color: #2eaadc;
+}
+input[type="checkbox"]:checked::after {
+  content: '✔';
+  font-size: 11px;
+  color: white;
+  position: absolute;
+  top: -1px; left: 2px;
+  font-weight: bold;
+}
+
+/* 리스트 간격 */
+li { margin-bottom: 0.25em; }
+
+/* =================================================================
+   옵시디언 노션 스타일 - 여백 및 줄간격 디테일 설정
+   ================================================================= */
+
+   body {
+    /* 1. 본문 줄간격 (노션은 1.5~1.6 정도로 넉넉함) */
+    --line-height-normal: 1.6;
+    
+    /* 2. 문단 간격 (엔터 쳤을 때 벌어지는 정도) */
+    --p-spacing: 12px; 
+  }
+  
+  /* 3. 제목(Header) 여백 - 노션 스타일의 핵심 */
+  /* 제목 위쪽을 많이 비워서 '새로운 내용 시작'임을 알림 */
+  .markdown-preview-view h1, .markdown-source-view.mod-cm6 h1,
+  .markdown-preview-view h2, .markdown-source-view.mod-cm6 h2,
+  .markdown-preview-view h3, .markdown-source-view.mod-cm6 h3 {
+    margin-top: 1.8em !important;    /* 위쪽 여백: 넓게 */
+    margin-bottom: 0.5em !important; /* 아래쪽 여백: 좁게 (본문과 가깝게) */
+    line-height: 1.3;
+  }
+  
+  /* H1은 더 웅장하게 */
+  .markdown-preview-view h1, .markdown-source-view.mod-cm6 h1 {
+    font-size: 2em; /* 폰트 크기 키움 */
+    border-bottom: 1px solid #e0e0e0; /* (선택) 노션처럼 H1 아래 얇은 선 */
+    padding-bottom: 0.3em;
+  }
+  
+  /* 4. 본문(Paragraph) 디테일 */
+  p {
+    margin-bottom: var(--p-spacing) !important;
+    margin-top: 0 !important;
+  }
+  
+  /* 편집 모드(Live Preview)에서 엔터 쳤을 때 간격 조정 */
+  .cm-line {
+    padding-bottom: 0.3em !important; /* 줄 바꿈 시 미세한 여백 */
+    padding-top: 0.3em !important;
+  }
+  
+  /* 5. 리스트(List) - 본문보다는 촘촘하게 */
+  ul, ol {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+  }
+  
+  li {
+    margin-bottom: 0.2em !important; /* 리스트 항목끼리는 가깝게 */
+    line-height: 1.5; /* 본문보다는 살짝 좁은 줄간격 */
+  }
+  
+  /* 6. 페이지 전체 여백 (화면 가장자리 답답함 해소) */
+  .markdown-source-view.mod-cm6 .cm-content {
+    padding-bottom: 150px !important; /* 스크롤 끝까지 내려도 아래에 여유 공간 확보 */
+  }
+
+  /* 7. 하이라이트(형광펜) - 노션 갈색 텍스트 스타일 */
+  /* 읽기 모드 */
+  .markdown-rendered mark {
+    background-color: #fef3c7 !important; /* 연한 노란색 배경 */
+    color: #92400e !important;            /* 요청하신 갈색/오렌지 텍스트 */
+    font-weight: 700;                     /* 볼드 처리 */
+    padding: 0.1em 0.2em;
+    border-radius: 3px;
+  }
+
+  /* 편집 모드(라이브 프리뷰) */
+  .cm-highlight {
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+    font-weight: 700;                     /* 볼드 처리 */
+    padding: 0.1em 0;
+    border-radius: 3px;
+  }

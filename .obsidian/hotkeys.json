@@ -1,0 +1,11 @@
+{
+  "confluence-converter:convert-to-confluence-to-clipboard": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "C"
+    }
+  ]
+}
