@@ -75,7 +75,7 @@
             }
           },
           {
-            "id": "4c93bcc8051127a9",
+            "id": "979c4aa4411eeb25",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -255,8 +255,8 @@
   "active": "ca62647960dd73f0",
   "lastOpenFiles": [
     "03. Offer (3.16~)/Agent design process.md",
-    "03. Offer (3.16~)/Agent component reference.md",
     "03. Offer (3.16~)/Agent design process overview.md",
+    "03. Offer (3.16~)/Agent component reference.md",
     "03. Offer (3.16~)/persona + blueprint.md",
     "03. Offer (3.16~)/action item.md",
     "03. Offer (3.16~)/walk-through principle.md",
