@@ -96,6 +96,8 @@ my-plugin/
 ├── commands/             # 사용자 진입점 — Skill을 로드하는 얇은 래퍼
 │   ├── analyze.md
 │   └── report.md
+├── agents/               # 특정 목적의 전문 에이전트 정의
+│   └── agent-name.md
 ├── skills/               # 재사용 가능한 전문 기능
 │   └── skill-name/
 │       ├── SKILL.md
@@ -105,6 +107,8 @@ my-plugin/
 │   └── hooks.json
 └── .mcp.json             # 플러그인 레벨 MCP 서버 연결
 ```
+
+> 상세 구현은 `plugin-dev` 플러그인(anthropics/claude-plugins-official) 참조.
 
 ---
 
@@ -228,15 +232,39 @@ text-to-sql/
 
 **schema-lookup을 별도 Skill로 만들지 않는 이유:** 스키마 탐색은 text-to-sql 없이 단독으로 요청되지 않는다. 여러 Command에서 독립적으로 재사용되지 않는다. → text-to-sql/references/schema.md가 맞는 위치
 
+### description 작성 원칙 — Undertrigger 문제
+
+에이전트는 Skill을 쓰면 유용한 상황에서도 쓰지 않는 **undertrigger 경향**이 있다. description이 소극적으로 작성되어 있으면 Skill이 발동되지 않는다.
+
+```
+소극적 (undertrigger 발생)
+description: "SQL 관련 작업을 처리한다"
+→ 에이전트가 "이게 SQL 작업인지" 스스로 판단해야 함
+
+적극적 (undertrigger 방지)
+description: >
+  자연어 질문을 SQL 쿼리로 변환한다.
+  사용자가 데이터 조회, 매출·비용·실적을 언급하거나
+  "보여줘", "뽑아줘", "얼마야", "어떻게 됐어" 표현 시 발동.
+  명시적으로 SQL을 요청하지 않아도 데이터 조회 맥락이면 사용한다.
+```
+
+**핵심 규칙:**
+
+- "언제 사용하는지"에 대한 모든 정보는 description에 넣는다 본문(SKILL.md body)은 트리거 후에만 로드되므로 트리거 조건을 본문에 쓰면 무의미함
+- 사용자가 명시적으로 요청하지 않는 맥락도 포함한다 "명시적으로 X를 요청하지 않아도 Y 상황이면 사용한다"
+- 구체적인 발화 예시를 포함한다 추상적인 설명보다 실제 사용자가 쓸 표현이 트리거 정확도를 높인다
+
 ### Skill 파일 구조 (SKILL.md)
 
 ```yaml
 ---
 name: text-to-sql
 description: >
-  자연어 질문을 SQL 쿼리로 변환.
-  사용자가 데이터 조회, 매출/비용/실적 관련 질문을 할 때 사용.
+  자연어 질문을 SQL 쿼리로 변환한다.
+  사용자가 데이터 조회, 매출·비용·실적을 언급하거나
   "보여줘", "뽑아줘", "얼마야" 표현 시 발동.
+  명시적으로 SQL을 요청하지 않아도 데이터 조회 맥락이면 사용한다.
 allowed-tools: mcp__db-mcp__query
 ---
 
