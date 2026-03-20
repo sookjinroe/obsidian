@@ -6,7 +6,16 @@
       "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\skills\\\\design-session\\\\references\")",
       "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\skills\\\\requirements-sync\")",
       "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\skills\\\\state-reconcile\")",
-      "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\agents\")"
+      "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\agents\")",
+      "Bash(cc --help)",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links\\\\claude.exe\" --help)",
+      "Read(//c/Users/user/Desktop/agent-design-test/**)",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links\\\\claude.exe\" --plugin-dir \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\" -p \"에이전트 설계 시작하고 싶어\")",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links\\\\claude.exe\" --plugin-dir \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\" -p \"/agent-designer:design\")",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links\\\\claude.exe\" --plugin-dir \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\" -p \"/help\")",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links\\\\claude.exe\" --plugin-dir \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\" -p \"에이전트 설계 시작하고 싶어\" --debug)",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links\\\\claude.exe\" --plugin-dir \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\" --allowed-tools \"Skill\" -p \"에이전트 설계 시작하고 싶어\")",
+      "Bash(\"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Microsoft\\\\WinGet\\\\Links\\\\claude.exe\" --plugin-dir \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\" --dangerously-skip-permissions -p \"에이전트 설계 시작하고 싶어. 재무팀 데이터 분석가들이 Redshift에서 자연어로 SQL 조회를 하고 싶어. DML은 차단해야 해.\")"
     ]
   }
 }

@@ -54,9 +54,8 @@
     "//간담회준비",
     "//03. Offer (3.16~)",
     "//agent-designer",
-    "//agent-designer/agent-designer/skills",
-    "//agent-designer/agent-designer/skills/agent-designer/skills/design-session",
-    "//agent-designer/agent-designer/agents"
+    "//조직 rnr",
+    "//design-plugin-test"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

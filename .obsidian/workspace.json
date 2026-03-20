@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "agent-designer/skills/design-session/SKILL.md",
+                "file": "조직 rnr/사업-오퍼링 협업 업무.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SKILL"
+              "title": "사업-오퍼링 협업 업무"
             }
           }
         ]
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "agent-designer/skills/design-session/SKILL.md",
+                "file": "조직 rnr/사업-오퍼링 협업 업무.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "SKILL 의 백링크"
+              "title": "사업-오퍼링 협업 업무 의 백링크"
             }
           },
           {
@@ -314,11 +314,30 @@
   },
   "active": "17105bd2d7e9fc63",
   "lastOpenFiles": [
-    "agent-designer/skills/requirements-sync/SKILL.md.tmp.27704.1773994327651",
-    "agent-designer/agents/gap-analyzer.md.tmp.27704.1773994288544",
+    "agent-designer/agents/gap-analyzer.md.tmp.27704.1774005129737",
+    "agent-designer/README.md.tmp.27704.1774004980233",
+    "agent-designer/skills/design-session/references/state-schema.md.tmp.27704.1774004943681",
+    "agent-designer/hooks/hooks.json.tmp.27704.1774004934585",
+    "agent-designer/skills/requirements-sync/SKILL.md.tmp.27704.1774004907319",
+    "agent-designer/agents/design-drafter.md.tmp.27704.1774004833308",
+    "agent-designer/agents/design-drafter.md.tmp.27704.1774004821922",
+    "agent-designer/skills/design-session/SKILL.md.tmp.27704.1774004812983",
+    "agent-designer/skills/design-session/SKILL.md.tmp.27704.1774004803544",
+    "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
+    "03. Offer (3.16~)/temp.md",
+    "cf 정리 temp.md",
+    "design-plugin-test/design-plugin-test.md",
+    "조직 rnr/사업-오퍼링 협업 업무.md",
+    "design-plugin-test",
+    "agent-designer/agents/design-drafter.md.tmp.27704.1773998887288",
+    "조직 rnr/조직 rnr.md",
+    "03. Offer (3.16~)/ㄴ 전체 빌드 사이클의 요구사항 추적 도구.md",
+    "agent-designer/agents/design-drafter.md",
+    "agent-designer/README.md",
+    "03. Offer (3.16~)/design plugin — 요구사항 문서.md",
+    "agent-designer/skills/design-session/SKILL.md",
     "agent-designer/agents/gap-analyzer.md",
     "03. Offer (3.16~)/skill creator skill & plugin-dev plugin 분석.md",
-    "agent-designer/skills/design-session/SKILL.md",
     "agent-designer/skills/design-session/references/workflow-steps.md",
     "agent-designer/skills/requirements-sync/SKILL.md",
     "agent-designer/skills/state-reconcile/SKILL.md",
@@ -326,30 +345,11 @@
     "agent-designer/skills/design-session/references/artifact-schema.md",
     "agent-designer/skills/design-session/references/gap-criteria.md",
     "agent-designer/skills/design-session/references/walkthrough-guide.md",
-    "03. Offer (3.16~)/temp.md",
-    "agent-designer/README.md",
-    "agent-designer/hooks/hooks.json",
-    "agent-designer/hooks",
-    "agent-designer/agents",
-    "agent-designer/skills/state-reconcile",
-    "agent-designer/skills/requirements-sync",
-    "agent-designer/skills/design-session/references",
-    "agent-designer/skills/design-session",
-    "agent-designer/skills",
-    "agent-designer",
-    "03. Offer (3.16~)/design plugin — 요구사항 문서.md",
-    "03. Offer (3.16~)/ㄴ 전체 빌드 사이클의 요구사항 추적 도구.md",
     "03. Offer (3.16~)/Agent design process.md",
-    "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
     "03. Offer (3.16~)/Agent component reference.md",
     "03. Offer (3.16~)/03. Offer (3.16~).md",
     "02. SK Chemical (3.6~)/02. SK Chemical (3.6~).md",
     "03. Offer (3.16~)/action item.md",
-    "03. Offer (3.16~)/에이전트 플랫폼 전략.md",
-    "03. Offer (3.16~)/scrap.md",
-    "03. Offer (3.16~)/Agent design process overview.md",
-    "03. Offer (3.16~)/persona + blueprint.md",
-    "03. Offer (3.16~)/walk-through principle.md",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",

@@ -1,134 +1,164 @@
 ---
 name: Agent Designer — Design Session
-description: This skill should be used when the user says "에이전트 설계 시작", "플러그인 설계하고 싶어", "에이전트 만들려고 해", "설계 이어서 해줘", "페르소나 정의해보자", "발화 뽑아줘", "요구사항 추출해줘", "Walk-through 해보자", "구성요소 결정해줘", "구멍 검증해줘", "설계 확정해줘", or invokes `/agent-designer:design`. This skill guides the full A→G agent design workflow from persona definition to finalized design artifact ready for plugin-dev handoff.
-version: 0.1.0
-argument-hint: "[설계할 에이전트 이름 또는 설명 (선택)]"
-allowed-tools: Read, Write
+description: This skill should be used when the user says "에이전트 설계 시작", "플러그인 설계하고 싶어", "에이전트 만들려고 해", "설계 이어서 해줘", "페르소나 정의해보자", "발화 뽑아줘", "요구사항 추출해줘", "Walk-through 해보자", "구성요소 결정해줘", "gap 검증해줘", "설계 확정해줘", This skill guides the full agent design workflow: it dynamically assesses the user's current understanding, delegates to design-drafter for autonomous draft generation once sufficient context is gathered, then guides review, gap verification, and finalization for plugin-dev handoff.
+version: 0.3.0
+argument-hint: "[프로젝트명 (선택, 예: redshift-analyzer)]"
+allowed-tools: Read, Write, Bash, Agent
 ---
 
 # Agent Designer — Design Session
 
-에이전트 설계의 전체 과정(작업 A→G)을 이끄는 핵심 스킬. 페르소나 정의에서 시작해 plugin-dev가 즉시 구현에 착수할 수 있는 확정 산출물까지 도달하도록 안내한다.
+에이전트 설계의 전체 과정을 이끄는 핵심 스킬. 대화를 통해 사용자의 현재 상태를 동적으로 파악하고, 충분한 맥락이 확보되면 design-drafter에 위임해 전체 초안을 자율 생성한다. 사용자는 초안을 검토하고 보완하는 역할을 맡는다.
 
-## 시작 전: 상태 확인
+하나의 워킹 디렉토리 안에서 여러 에이전트 설계를 병행할 수 있다. 각 설계는 프로젝트명으로 구분되며 `.claude/agent-designer/{project-name}/`에 독립 저장된다.
 
-세션 시작 시 또는 이 스킬이 활성화될 때, 먼저 상태 파일을 확인한다.
+## 시작 전: 프로젝트 선택
 
-```
-Read: .claude/agent-designer/state.md
-```
+### 1. 기존 프로젝트 스캔
 
-- 파일이 없으면 → **작업 A**부터 시작
-- 파일이 있으면 → `current_step` 값을 읽어 해당 단계로 직접 이동
-
-상태 파일을 읽은 후 사용자에게 현재 위치를 한 줄로 안내한다. 예: "이전 세션에서 '[프로젝트명]' 설계가 작업 C까지 진행됐습니다. 이어서 진행할까요?"
-
-## 작업 흐름 개요
-
-```
-A. 페르소나 정의
-   ↓ (persona.md 저장)
-B. 발화 가설 도출
-   ↓ (artifact-v1.md 저장)
-C. 설계 전 Walk-through (발화 → 요구사항)
-   ↓ (artifact-v2.md 저장)
-D. plugin-dev 계위 판단 연동 (요구사항 → 구성요소)
-   ↓ (artifact-v3.md 저장)
-E. 발화 목록 보완 (구성요소 커버리지 확인)
-   ↓ (artifact-v4.md 저장)
-F. 설계 후 Walk-through (구멍 검증 ①③)
-   ↓ 심각 구멍 없음 → (artifact-v5.md 저장)
-   ↓ 심각 구멍 있음 → 작업 D로 복귀
-G. 구성 확정
-   ↓ (artifact-final.md 저장)
-   → plugin-dev 인계
+```bash
+ls .claude/agent-designer/ 2>/dev/null
 ```
 
-각 단계의 상세 절차는 `references/workflow-steps.md`를 참조한다.
+`.claude/agent-designer/` 아래 서브디렉토리가 있으면 각 `state.md`를 읽어 목록을 만든다.
 
-## 산출물 저장 정책
+### 2. 진입 분기
 
-**자동 저장 시점 (작업 완료 경계):**
+**argument로 프로젝트명이 주어진 경우:**
+- 해당 프로젝트의 `.claude/agent-designer/{project-name}/state.md`를 읽는다
+- 파일이 없으면 신규 설계 시작, 있으면 해당 단계로 직접 이동
 
-| 작업 완료 | 저장 파일 |
+**argument 없고 기존 프로젝트 없음:**
+- 프로젝트명을 한 번 질문한다: "이 설계의 프로젝트명을 정해주세요 (예: redshift-analyzer, hr-chatbot)"
+- 답변을 받으면 신규 설계 시작
+
+**argument 없고 기존 프로젝트 있음:**
+- 진행 중인 프로젝트 목록을 표시하고 선택을 요청한다:
+  ```
+  진행 중인 설계:
+  1. redshift-analyzer (gap 검증 대기)
+  2. hr-chatbot (초안 생성 중)
+  새로 시작하려면 프로젝트명을 입력하세요.
+  ```
+- 선택 또는 신규 프로젝트명을 받으면 해당 흐름으로 진입
+
+### 3. 프로젝트 경로 설정
+
+프로젝트명 확정 후 이 스킬의 모든 파일 경로는 아래 변수를 기준으로 한다:
+
+```
+{project_path} = .claude/agent-designer/{project-name}
+```
+
+신규 설계인 경우:
+```bash
+mkdir -p {project_path}
+```
+
+상태 파일을 읽은 후 사용자에게 현재 위치를 한 줄로 안내한다.
+
+## 충분성 판단 루프 (신규 설계)
+
+대화를 통해 아래 세 가지가 모두 파악될 때까지 한 번에 하나씩 질문한다.
+
+| 항목 | 확인 내용 |
 |---|---|
-| 작업 A | `.claude/agent-designer/persona.md` |
-| 작업 B | `.claude/agent-designer/artifact-v1.md` |
-| 작업 C | `.claude/agent-designer/artifact-v2.md` |
-| 작업 D | `.claude/agent-designer/artifact-v3.md` |
-| 작업 E | `.claude/agent-designer/artifact-v4.md` |
-| 작업 F | `.claude/agent-designer/artifact-v5.md` |
-| 작업 G | `.claude/agent-designer/artifact-final.md` |
+| ① 사용 주체 | 누가 쓰는가 (역할, 부서, 업무 환경) |
+| ② 핵심 목적과 불편함 | 무엇을 해결하는가, 현재 무엇이 불편한가 |
+| ③ 핵심 제약 | 반드시 지켜야 할 것, 연결해야 할 시스템 |
 
-각 작업 완료 직후 반드시 해당 파일을 저장하고 `state.md`의 `current_step`을 다음 단계로 업데이트한다.
+**매 답변 후 충분성을 판단한다.** 세 가지가 모두 충족되면 즉시 design-drafter를 호출한다. 사용자의 첫 발화에서 이미 충족된 경우 바로 호출한다.
 
-**수동 저장 (작업 내부):** 사용자가 "지금까지 저장해줘" 또는 "현재 산출물 보여줘"라고 요청할 때만 저장한다. 작업 중간의 잦은 자동 저장은 불완전한 상태를 남기므로 하지 않는다.
+충분성 판단 시 주의:
+- ①②③이 명확하면 충분. 세부 시스템 명칭·테이블 구조·내부 용어는 필수가 아님 — drafter가 ⚠️로 마킹한다
+- 같은 항목을 두 번 묻지 않는다
+- 사용자가 자발적으로 제공한 정보는 충분성에 반영한다
 
-## 상태 파일 업데이트
+상세 진행 방식은 `references/workflow-steps.md`의 충분성 판단 루프 섹션을 참조한다.
 
-작업이 완료될 때마다 `state.md`를 Write 도구로 갱신한다. 형식은 `references/state-schema.md`를 참조한다.
+## design-drafter 호출
 
-## 작업 D: plugin-dev 협업
+충분성 충족 시:
 
-작업 D에서는 plugin-dev 플러그인의 `plugin-structure` 스킬을 활용해 구성요소의 계위(Command / Skill / references / MCP / Hook / Agent)를 판단한다. plugin-dev와 design-session이 동시에 활성화된 상태에서 plugin-dev의 판단 결과를 이 스킬의 산출물에 통합한다.
+1. `{project_path}/state.md`를 `current_step: drafting`으로 초기 생성 (아직 없는 경우)
+2. "지금까지 파악한 내용으로 설계 초안을 생성하겠습니다"라고 안내
+3. 수집된 정보를 구조화된 컨텍스트 요약으로 정리해 design-drafter에 전달 (반드시 `프로젝트 경로` 포함)
+4. design-drafter가 `{project_path}/persona.md`, `artifact-v1.md` ~ `artifact-v4.md`를 자율 생성
 
-계위 판단 후 사용자에게 각 판단의 근거를 설명하고 조정 의견을 받는다.
+## 초안 확인 및 보완
 
-## 작업 F: 구멍 검증
+design-drafter 완료 후:
 
-작업 F 시점에 `gap-analyzer` 에이전트를 호출한다.
+1. 생성된 구성요소 목록과 발화 수를 요약 제시
+2. "큰 방향이 맞나요? 맞지 않는 부분이 있으면 말씀해주세요"로 전체 확인
+3. ⚠️ 항목에 대해 추가 정보 요청 (선택)
+4. ⚠️ 항목 중 계위(Command/Skill/MCP 등)가 불확실한 것 → plugin-dev의 `plugin-structure` 스킬을 활용해 함께 검토
+5. 수정사항을 `artifact-v4.md`에 반영
+
+초안 확인 완료 후 `state.md`의 `current_step`을 `F`로 업데이트하고 gap 검증으로 진행한다.
+
+## gap 검증 (작업 F)
+
+`gap-analyzer` 에이전트를 호출한다. 호출 시 프로젝트 경로를 명시한다:
 
 ```
-입력: .claude/agent-designer/artifact-v4.md
-출력: .claude/agent-designer/gap-report.md
+프로젝트 경로: {project_path}
+입력: {project_path}/artifact-v4.md
+출력: {project_path}/gap-report.md
 ```
 
-gap-analyzer가 완료되면 `gap-report.md`를 읽어 결과를 사용자에게 보고한다.
+`{project_path}/gap-report.md`를 읽어 결과를 사용자에게 보고한다.
 
-- 심각 구멍이 있으면: `state.md`의 `loop_history`에 복귀 이력을 기록하고 작업 D로 돌아간다
-- 심각 구멍이 없으면: `artifact-v5.md`를 저장하고 작업 G로 진행한다
+- 심각 gap이 있으면: `{project_path}/state.md`의 `loop_history`에 기록, `iteration` +1, 초안 보완으로 복귀
+- 심각 gap이 없으면: `{project_path}/artifact-v5.md` 저장, 구성 확정으로 진행
 
-구멍 판정 기준(①연결 없음, ③트리거 미정의)과 심각도 분류는 `references/gap-criteria.md`를 참조한다.
+gap 판정 기준(①연결 없음, ③트리거 미정의)과 심각도 분류는 `references/gap-criteria.md`를 참조한다.
 
-## 작업 G: plugin-dev 인계
+## 구성 확정 (작업 G)
 
 `artifact-final.md`를 생성하고 사용자에게 아래를 안내한다.
 
-- 확정본에 포함된 정보 요약 (목적, 사용자, 구성요소 목록, 계위, 연결 관계)
+- 확정본 요약 (목적, 사용자, 구성요소 목록, 계위, 연결 관계)
 - "plugin-dev:create-plugin에 이 산출물을 전달해 구현을 시작할 수 있습니다"
 
-## 산출물 형식
+## 산출물 저장 정책
 
-산출물은 Markdown 표 형식을 사용한다. 발화 하나가 여러 요구사항에, 요구사항 하나가 여러 구성요소에 대응될 때 발화 ID를 반복하는 행 구조로 1:N 관계를 표현한다. 상세 형식은 `references/artifact-schema.md`를 참조한다.
+모든 파일은 `{project_path}/` 아래에 저장한다.
 
-## Walk-through 방법론
+| 완료 시점 | 저장 파일 |
+|---|---|
+| design-drafter 완료 | `persona.md`, `artifact-v1.md` ~ `artifact-v4.md` |
+| 초안 확인 완료 | `artifact-v4.md` (수정사항 반영) |
+| gap 검증 완료 | `artifact-v5.md` |
+| 구성 확정 완료 | `artifact-final.md` |
 
-설계 전 Walk-through(작업 C)와 설계 후 Walk-through(작업 F, gap-analyzer)의 구체적인 진행 방식은 `references/walkthrough-guide.md`를 참조한다.
+각 완료 시점에 `{project_path}/state.md`의 `current_step`을 업데이트한다.
+
+**수동 저장:** 사용자가 "지금까지 저장해줘" 또는 "현재 산출물 보여줘"라고 요청할 때만 저장한다.
 
 ## 루프백 처리
 
-심각 구멍 발견으로 작업 D로 복귀할 때:
+심각 gap 발견으로 초안 보완이 필요할 때:
 
-1. 복귀 이유(어느 발화, 어느 구멍)를 `state.md`의 `loop_history`에 기록
-2. `iteration` 카운터를 1 증가
-3. 사용자에게 "U07에서 심각 구멍이 발견되어 작업 D로 돌아갑니다. [이유]" 안내
-4. artifact-v3.md부터 해당 항목을 **덮어쓰며** 재진행
+1. 보완 이유(어느 발화, 어느 gap)를 `{project_path}/state.md`의 `loop_history`에 기록
+2. `iteration` +1
+3. 사용자에게 "[발화 ID]에서 심각 gap이 발견되어 설계를 보완합니다. [이유]" 안내
+4. `{project_path}/artifact-v4.md`에서 해당 항목 수정 후 gap-analyzer 재실행
 
-**버전 파일 덮어쓰기 정책:**
-루프백 시 artifact-v3.md, v4.md, v5.md는 새 파일을 만들지 않고 기존 파일을 덮어쓴다. 이전 이터레이션의 내용은 `state.md`의 `loop_history`에 구멍 원인과 복귀 지점이 기록되므로 이력 추적이 가능하다. artifact 파일은 항상 "현재 진행 중인 설계의 최신 상태"를 나타낸다.
+**덮어쓰기 정책:** 루프백 시 artifact-v4.md, v5.md는 기존 파일을 덮어쓴다. 이전 이터레이션 내용은 `{project_path}/state.md`의 `loop_history`에 gap 원인과 복귀 지점이 기록되므로 이력 추적이 가능하다.
 
 ## 대화 진행 원칙
 
-- 한 번에 한 단계씩 진행한다. 사용자 확인 없이 다음 단계로 넘어가지 않는다
+- 충분성 판단 루프에서 한 번에 한 질문만 한다
+- 각 단계 시작 시 "[단계명]을 시작합니다. [목적 한 줄]"로 맥락을 환기한다. 내부 레이블(A~G)은 사용자 대화에 노출하지 않는다
 - 사용자가 중간에 다른 질문을 하더라도 현재 단계 완료 후 돌아온다
-- 각 단계 시작 시 "지금 작업 [X]를 시작합니다. [목적 한 줄]"로 맥락을 환기한다
 
 ## 참조 파일
 
 | 파일 | 내용 |
 |---|---|
-| `references/workflow-steps.md` | 작업 A~G 각 단계 상세 절차 |
+| `references/workflow-steps.md` | 충분성 판단 기준·예시, drafter 연동 절차, F~G 상세 절차 |
 | `references/walkthrough-guide.md` | Walk-through 진행 방식 |
-| `references/gap-criteria.md` | 구멍 ①③ 기준 및 심각도 분류 |
+| `references/gap-criteria.md` | gap ①③ 기준 및 심각도 분류 |
 | `references/artifact-schema.md` | 산출물 표 형식 및 1:N 관계 표현 규칙 |
 | `references/state-schema.md` | state.md 파일 형식 정의 |
