@@ -1,0 +1,12 @@
+{
+  "SessionStart": [
+    {
+      "hooks": [
+        {
+          "type": "prompt",
+          "prompt": ".claude/agent-designer/state.md 파일이 존재하면 읽어서 현재 설계 상태를 한 줄로 요약해 사용자에게 안내하라. 파일이 없으면 아무것도 하지 않는다."
+        }
+      ]
+    }
+  ]
+}

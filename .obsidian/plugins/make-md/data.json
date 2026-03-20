@@ -52,7 +52,11 @@
     "//1. Study 확장 (2.23~)",
     "//0. Onboarding Study (2.10~)",
     "//간담회준비",
-    "//03. Offer (3.16~)"
+    "//03. Offer (3.16~)",
+    "//agent-designer",
+    "//agent-designer/agent-designer/skills",
+    "//agent-designer/agent-designer/skills/agent-designer/skills/design-session",
+    "//agent-designer/agent-designer/agents"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

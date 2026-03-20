@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Skill(plugin-dev:create-plugin)"
+      "Skill(plugin-dev:create-plugin)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\.claude-plugin\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\skills\\\\design-session\\\\references\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\skills\\\\requirements-sync\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\skills\\\\state-reconcile\")",
+      "Bash(mkdir -p \"C:\\\\Users\\\\user\\\\Desktop\\\\sookjin.roe\\\\agent-designer\\\\agents\")"
     ]
   }
 }
