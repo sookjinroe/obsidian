@@ -69,6 +69,7 @@
 2. 수집된 정보를 아래 형식으로 요약해 drafter에 전달:
 
 ```
+프로젝트 경로: {project_path}
 사용 주체: [역할/부서/환경]
 핵심 목적: [무엇을 해결하는가]
 주요 불편함: [현재의 문제]
@@ -76,19 +77,42 @@
 추가 컨텍스트: [기타 수집된 정보]
 ```
 
-3. design-drafter가 `persona.md`, `artifact-v1~4.md`를 자율 생성한다
+3. design-drafter가 `persona.md`, `artifact.md` (발화·요구사항만)를 자율 생성한다
 
 ### 초안 확인 절차
 
 drafter 완료 후:
 
-1. 생성된 구성요소 목록과 발화 수를 요약 제시
+1. 생성된 발화 수와 요구사항 수를 요약 제시
 2. "큰 방향이 맞나요? 맞지 않는 부분이 있으면 말씀해주세요"
 3. ⚠️ 항목 목록을 제시하며 추가 정보 요청 (선택)
-4. ⚠️ 항목 중 계위가 불확실한 것 → plugin-dev `plugin-structure` 스킬로 함께 검토
-5. 수정사항을 `artifact-v4.md`에 반영
+4. 수정사항을 `artifact.md`에 반영
 
-초안 확인 완료 → `state.md`의 `current_step`을 `F`로 업데이트
+초안 확인 완료 → `state.md`의 `current_step`을 `reviewed`로 업데이트
+
+---
+
+## plugin-dev 핸드오프 절차
+
+**목적:** 구성요소명·계위·소속 플러그인 결정을 plugin-dev:plugin-structure에 위임한다.
+
+### 핸드오프 안내
+
+```
+발화·요구사항 초안이 확정됐습니다.
+다음으로 plugin-dev:plugin-structure를 실행해 구성요소명·계위·소속 플러그인을 결정해주세요.
+
+입력: {project_path}/artifact.md
+작업: 각 요구사항 행에 구성요소명·계위·소속플러그인 컬럼 추가
+완료 후: "설계 이어서 해줘 {project-name}"으로 돌아오세요.
+```
+
+### 재개 시 감지 로직
+
+사용자가 "설계 이어서 해줘"로 재진입하면 `artifact.md`를 읽어 구성요소명 컬럼 유무를 확인한다.
+
+- **컬럼 없음**: "plugin-dev:plugin-structure가 완료되지 않았습니다. 완료 후 이어서 해주세요" 안내 후 중단
+- **컬럼 있음**: `state.md`의 `current_step`을 `component_added`로 업데이트하고 커버리지 보완 진행
 
 ---
 
@@ -101,8 +125,8 @@ drafter 완료 후:
 `gap-analyzer` 에이전트를 호출해 자율 검증을 실행한다.
 
 ```
-gap-analyzer 입력: artifact-v4.md
-gap-analyzer 출력: gap-report.md
+gap-analyzer 입력: {project_path}/artifact.md
+gap-analyzer 출력: {project_path}/gap-report.md
 ```
 
 gap-report.md를 읽어 결과를 사용자에게 보고한다.
@@ -110,13 +134,14 @@ gap-report.md를 읽어 결과를 사용자에게 보고한다.
 **심각 gap이 있는 경우:**
 - 해당 발화와 요구사항을 짚어 사용자에게 설명
 - `state.md`의 `loop_history`에 기록
-- `iteration` +1
-- `artifact-v4.md`에서 해당 항목 수정 후 gap-analyzer 재실행
+- `iteration` +1, `current_step`을 `reviewed`로 되돌림
+- `artifact.md`에서 해당 항목 수정 후 gap-analyzer 재실행
 
 **심각 gap이 없는 경우:**
-- 중간/경미 gap은 산출물에 기록 (경미는 Could 항목으로 이관)
-- `artifact-v5.md` 저장
-- 구성 확정으로 이동
+- 중간/경미 gap은 artifact.md에 gap 컬럼 추가 (gap-report.md 머지)
+- 경미 gap은 gap 설명에 "Could 항목" 표기
+- `state.md`의 `current_step`을 `gap_check`로 업데이트
+- 확정으로 이동
 
 ### 완료 조건
 
@@ -124,28 +149,25 @@ gap-report.md를 읽어 결과를 사용자에게 보고한다.
 
 ---
 
-## 구성 확정
+## 확정
 
 **목적:** 심각 gap이 없는 상태의 설계 산출물을 최종본으로 확정하고 plugin-dev에 인계한다.
 
 ### 진행 방식
 
-1. `artifact-v5.md`를 기반으로 `artifact-final.md`를 생성한다
-2. 확정본에 포함된 정보를 사용자에게 요약 제시:
+1. artifact.md (gap 컬럼 포함)를 기반으로 사용자에게 요약 제시:
    - 에이전트 목적 및 사용자
    - 구성요소 목록 (이름, 계위, 소속 플러그인)
    - 발화-요구사항-구성요소 연결 관계
    - 미해소 gap(중간/경미) 목록
-3. 사용자 최종 확인
-4. `state.md`의 `current_step`을 `finalized`로 업데이트
+2. 사용자 최종 확인
+3. `state.md`의 `current_step`을 `finalized`로 업데이트
 
 ### plugin-dev 인계
 
 "plugin-dev:create-plugin에 이 산출물을 전달해 구현을 시작할 수 있습니다. plugin-dev는 산출물을 검토하고 시작 지점을 스스로 결정합니다."
 
-### plugin-dev Phase 5 이후: skill-creator 연결 안내
-
-구성 확정 완료 시 사용자에게 전체 사이클을 안내한다:
+### 완료 후 전체 사이클 안내
 
 ```
 다음 단계 안내:
@@ -157,4 +179,4 @@ gap-report.md를 읽어 결과를 사용자에게 보고한다.
 
 ### 완료 조건
 
-사용자가 확정본을 승인했을 때. `artifact-final.md` 저장, `state.md` 업데이트.
+사용자가 확정본을 승인했을 때. `state.md` `current_step: finalized` 업데이트.

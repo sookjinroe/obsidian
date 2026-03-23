@@ -1,7 +1,7 @@
 ---
 name: Agent Designer — State Reconcile
 description: This skill should be used when the user invokes `/agent-designer:sync`, or says "상태 동기화해줘", "산출물 상태 확인해줘", "현재 설계 상태가 맞는지 확인해줘", "state.md가 이상한 것 같아", "어디까지 진행됐는지 모르겠어". This skill reads all design artifact files, re-derives the consistent current state, reports any inconsistencies, and fixes the state.md file.
-version: 0.3.0
+version: 0.4.0
 argument-hint: "[프로젝트명 (선택, 생략 시 전체 프로젝트 표시)]"
 allowed-tools: Read, Write, Bash
 ---
@@ -32,27 +32,23 @@ ls .claude/agent-designer/ 2>/dev/null
 ```
 {project_path}/state.md
 {project_path}/persona.md
-{project_path}/artifact-v1.md
-{project_path}/artifact-v2.md
-{project_path}/artifact-v3.md
-{project_path}/artifact-v4.md
-{project_path}/artifact-v5.md
-{project_path}/artifact-final.md
+{project_path}/artifact.md
 {project_path}/gap-report.md
 ```
 
 ### 3. 실제 상태 재도출
 
-파일 존재 여부로 실제 `current_step`을 판단한다.
+artifact.md의 컬럼 채워진 정도로 실제 `current_step`을 판단한다.
 
-| 파일 상태 | 실제 current_step | 의미 |
+| artifact.md 상태 | 실제 current_step | 의미 |
 |---|---|---|
-| artifact-v4.md 없음 (또는 v1~v4 일부 누락) | drafting | 초안 생성 전 또는 진행 중 |
-| artifact-v4.md 있음, artifact-v5.md 없음 | F | 초안 확인 완료, gap 검증 대기 |
-| artifact-v5.md 있음, artifact-final.md 없음 | G | gap 검증 완료, 구성 확정 대기 |
-| artifact-final.md 있음 | finalized | 설계 완료 |
+| 파일 없음 | drafting | 초안 생성 전 |
+| 발화·요구사항 컬럼만 있음 (구성요소명 없음) | reviewed | plugin-dev 핸드오프 전 |
+| 구성요소명 컬럼 있음, gap 컬럼 없음 | component_added | plugin-dev 완료, gap 검증 전 |
+| gap 컬럼 있음, gap-report.md 있음 | gap_check | gap 검증 완료, 확정 전 |
+| state.md current_step = finalized | finalized | 설계 완료 |
 
-**유효한 current_step 값:** `drafting`, `F`, `G`, `finalized`
+**유효한 current_step 값:** `drafting`, `reviewed`, `component_added`, `gap_check`, `finalized`
 
 ### 4. 불일치 감지 및 보고
 
@@ -62,27 +58,27 @@ ls .claude/agent-designer/ 2>/dev/null
 - state.md의 current_step이 파일 상태보다 앞서 있음
 - state.md의 current_step이 파일 상태보다 뒤처져 있음
 - state.md 파일 자체가 없음
-- state.md에 구 스키마 값(A~E) 있음 → `drafting`으로 변환
+- state.md에 구 스키마 값(A~G, F, G) 있음 → 컬럼 상태 기반으로 재도출
 
 사용자에게 발견된 불일치를 명확히 보고한다:
 
 ```
 [redshift-analyzer]
-state.md: current_step = F
-실제 파일: artifact-v4.md 존재, artifact-v5.md 없음
+state.md: current_step = component_added
+실제 파일: artifact.md 구성요소명 컬럼 있음, gap 컬럼 없음
 → 파일 상태와 일치. 수정 불필요.
 
 [hr-chatbot]
-state.md: current_step = G
-실제 파일: artifact-v5.md 없음
-→ 불일치. state.md를 current_step: F로 수정합니다.
+state.md: current_step = gap_check
+실제 파일: artifact.md gap 컬럼 없음
+→ 불일치. state.md를 current_step: component_added로 수정합니다.
 ```
 
 ### 5. state.md 수정
 
 실제 상태에 맞게 각 프로젝트의 `state.md`를 Write 도구로 갱신한다. 수정 전 사용자에게 변경 내용을 알린다.
 
-구 스키마 값(A, B, C, D, E) 발견 시 → `drafting`으로 일괄 변환.
+구 스키마 값(A, B, C, D, E, F, G) 발견 시 → 컬럼 상태 기반으로 재도출해 변환.
 
 ### 6. 전체 상태 요약 출력
 
@@ -96,7 +92,7 @@ state.md: current_step = G
 구현 완료 구성요소: 0개
 
 [hr-chatbot]
-현재 단계: gap 검증 대기
+현재 단계: plugin-dev 핸드오프 대기
 반복 횟수: 1회
 구현 완료 구성요소: 0개
 =================
@@ -109,6 +105,7 @@ state.md: current_step = G
 | current_step | 단계 설명 | 다음 할 일 |
 |---|---|---|
 | drafting | 초안 생성 전 또는 진행 중 | "에이전트 설계 시작하고 싶어 [프로젝트명]" |
-| F | 초안 확인 완료, gap 검증 대기 | "설계 이어서 해줘 [프로젝트명]"로 gap 검증 시작 |
-| G | gap 검증 완료, 구성 확정 대기 | "설계 이어서 해줘 [프로젝트명]"로 구성 확정 |
+| reviewed | 초안 확인 완료, plugin-dev 핸드오프 대기 | plugin-dev:plugin-structure 실행 후 "설계 이어서 해줘 [프로젝트명]" |
+| component_added | 구성요소 결정 완료, gap 검증 대기 | "설계 이어서 해줘 [프로젝트명]"로 gap 검증 시작 |
+| gap_check | gap 검증 완료, 확정 대기 | "설계 이어서 해줘 [프로젝트명]"로 확정 |
 | finalized | 설계 완료 | plugin-dev:create-plugin으로 구현 시작 가능 |

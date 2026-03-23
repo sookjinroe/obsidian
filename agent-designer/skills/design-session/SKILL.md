@@ -1,14 +1,14 @@
 ---
 name: Agent Designer — Design Session
-description: This skill should be used when the user says "에이전트 설계 시작", "플러그인 설계하고 싶어", "에이전트 만들려고 해", "설계 이어서 해줘", "페르소나 정의해보자", "발화 뽑아줘", "요구사항 추출해줘", "Walk-through 해보자", "구성요소 결정해줘", "gap 검증해줘", "설계 확정해줘", This skill guides the full agent design workflow: it dynamically assesses the user's current understanding, delegates to design-drafter for autonomous draft generation once sufficient context is gathered, then guides review, gap verification, and finalization for plugin-dev handoff.
-version: 0.3.0
+description: This skill should be used when the user says "에이전트 설계 시작", "플러그인 설계하고 싶어", "에이전트 만들려고 해", "설계 이어서 해줘", "페르소나 정의해보자", "발화 뽑아줘", "요구사항 추출해줘", "Walk-through 해보자", "gap 검증해줘", "설계 확정해줘", This skill guides the full agent design workflow: it dynamically assesses the user's current understanding, delegates to design-drafter for autonomous draft generation once sufficient context is gathered, then guides review, plugin-dev handoff, coverage verification, gap validation, and finalization.
+version: 0.4.0
 argument-hint: "[프로젝트명 (선택, 예: redshift-analyzer)]"
 allowed-tools: Read, Write, Bash, Agent
 ---
 
 # Agent Designer — Design Session
 
-에이전트 설계의 전체 과정을 이끄는 핵심 스킬. 대화를 통해 사용자의 현재 상태를 동적으로 파악하고, 충분한 맥락이 확보되면 design-drafter에 위임해 전체 초안을 자율 생성한다. 사용자는 초안을 검토하고 보완하는 역할을 맡는다.
+에이전트 설계의 전체 과정을 이끄는 핵심 스킬. 대화를 통해 사용자의 현재 상태를 동적으로 파악하고, 충분한 맥락이 확보되면 design-drafter에 위임해 발화·요구사항 초안을 자율 생성한다. 구성요소·계위 결정은 plugin-dev:plugin-structure에 위임한다.
 
 하나의 워킹 디렉토리 안에서 여러 에이전트 설계를 병행할 수 있다. 각 설계는 프로젝트명으로 구분되며 `.claude/agent-designer/{project-name}/`에 독립 저장된다.
 
@@ -83,82 +83,108 @@ mkdir -p {project_path}
 1. `{project_path}/state.md`를 `current_step: drafting`으로 초기 생성 (아직 없는 경우)
 2. "지금까지 파악한 내용으로 설계 초안을 생성하겠습니다"라고 안내
 3. 수집된 정보를 구조화된 컨텍스트 요약으로 정리해 design-drafter에 전달 (반드시 `프로젝트 경로` 포함)
-4. design-drafter가 `{project_path}/persona.md`, `artifact-v1.md` ~ `artifact-v4.md`를 자율 생성
+4. design-drafter가 `{project_path}/persona.md`, `{project_path}/artifact.md` (발화·요구사항만) 자율 생성
 
 ## 초안 확인 및 보완
 
 design-drafter 완료 후:
 
-1. 생성된 구성요소 목록과 발화 수를 요약 제시
+1. 생성된 발화 수와 요구사항 수를 요약 제시
 2. "큰 방향이 맞나요? 맞지 않는 부분이 있으면 말씀해주세요"로 전체 확인
 3. ⚠️ 항목에 대해 추가 정보 요청 (선택)
-4. ⚠️ 항목 중 계위(Command/Skill/MCP 등)가 불확실한 것 → plugin-dev의 `plugin-structure` 스킬을 활용해 함께 검토
-5. 수정사항을 `artifact-v4.md`에 반영
+4. 수정사항을 `{project_path}/artifact.md`에 반영
 
-초안 확인 완료 후 `state.md`의 `current_step`을 `F`로 업데이트하고 gap 검증으로 진행한다.
+초안 확인 완료 후 `{project_path}/state.md`의 `current_step`을 `reviewed`로 업데이트한다.
 
-## gap 검증 (작업 F)
+## plugin-dev 핸드오프
+
+초안 확인 완료 후 사용자에게 안내한다:
+
+```
+발화·요구사항 초안이 확정됐습니다.
+다음으로 plugin-dev:plugin-structure를 실행해 구성요소명·계위·소속 플러그인을 결정해주세요.
+
+입력: {project_path}/artifact.md
+작업: 각 요구사항에 구성요소명·계위·소속플러그인 컬럼 추가
+완료 후: "설계 이어서 해줘 {project-name}"으로 돌아오세요.
+```
+
+이 시점에서 design-session은 대기한다. plugin-dev가 artifact.md에 컬럼을 추가한 후 사용자가 재진입한다.
+
+## 재개 후 커버리지 보완
+
+사용자가 재진입("설계 이어서 해줘")하면:
+
+1. `{project_path}/artifact.md`를 읽어 구성요소명 컬럼 유무를 확인한다
+2. **컬럼 없음** → "plugin-dev:plugin-structure가 완료되지 않았습니다. 완료 후 이어서 해주세요" 안내 후 중단
+3. **컬럼 있음** → `{project_path}/state.md`의 `current_step`을 `component_added`로 업데이트하고 진행
+
+커버리지 보완:
+- artifact.md의 구성요소 목록을 순회하며 발동 발화가 없는 구성요소를 찾는다
+- 발동 발화가 없는 구성요소가 있으면 해당 경로를 발동시킬 발화 행을 추가한다 (유형: "보완")
+- artifact.md에 추가된 행을 저장한다
+
+## gap 검증
 
 `gap-analyzer` 에이전트를 호출한다. 호출 시 프로젝트 경로를 명시한다:
 
 ```
 프로젝트 경로: {project_path}
-입력: {project_path}/artifact-v4.md
+입력: {project_path}/artifact.md
 출력: {project_path}/gap-report.md
 ```
 
 `{project_path}/gap-report.md`를 읽어 결과를 사용자에게 보고한다.
 
-- 심각 gap이 있으면: `{project_path}/state.md`의 `loop_history`에 기록, `iteration` +1, 초안 보완으로 복귀
-- 심각 gap이 없으면: `{project_path}/artifact-v5.md` 저장, 구성 확정으로 진행
+- **심각 gap이 있으면:** `{project_path}/state.md`의 `loop_history`에 기록, `iteration` +1, `current_step`을 `reviewed`로 되돌리고 초안 보완으로 복귀
+- **심각 gap이 없으면:** artifact.md에 gap 컬럼을 추가 (gap-report.md 내용 머지), `current_step`을 `gap_check`로 업데이트, 확정으로 진행
 
 gap 판정 기준(①연결 없음, ③트리거 미정의)과 심각도 분류는 `references/gap-criteria.md`를 참조한다.
 
-## 구성 확정 (작업 G)
+## 확정
 
-`artifact-final.md`를 생성하고 사용자에게 아래를 안내한다.
+gap 컬럼이 추가된 artifact.md를 기반으로 사용자에게 아래를 안내한다:
 
 - 확정본 요약 (목적, 사용자, 구성요소 목록, 계위, 연결 관계)
+- 미해소 gap(중간/경미) 목록
 - "plugin-dev:create-plugin에 이 산출물을 전달해 구현을 시작할 수 있습니다"
+
+사용자 최종 확인 후 `{project_path}/state.md`의 `current_step`을 `finalized`로 업데이트한다.
 
 ## 산출물 저장 정책
 
 모든 파일은 `{project_path}/` 아래에 저장한다.
 
-| 완료 시점 | 저장 파일 |
+| 완료 시점 | 저장/변경 파일 |
 |---|---|
-| design-drafter 완료 | `persona.md`, `artifact-v1.md` ~ `artifact-v4.md` |
-| 초안 확인 완료 | `artifact-v4.md` (수정사항 반영) |
-| gap 검증 완료 | `artifact-v5.md` |
-| 구성 확정 완료 | `artifact-final.md` |
-
-각 완료 시점에 `{project_path}/state.md`의 `current_step`을 업데이트한다.
-
-**수동 저장:** 사용자가 "지금까지 저장해줘" 또는 "현재 산출물 보여줘"라고 요청할 때만 저장한다.
+| design-drafter 완료 | `persona.md`, `artifact.md` (발화·요구사항) |
+| 초안 확인 완료 | `artifact.md` (수정사항 반영), `state.md` current_step → reviewed |
+| plugin-dev 완료 감지 | `state.md` current_step → component_added |
+| 커버리지 보완 완료 | `artifact.md` (보완 발화 행 추가) |
+| gap 검증 완료 | `artifact.md` (gap 컬럼 추가), `gap-report.md`, `state.md` current_step → gap_check |
+| 확정 완료 | `state.md` current_step → finalized |
 
 ## 루프백 처리
 
 심각 gap 발견으로 초안 보완이 필요할 때:
 
 1. 보완 이유(어느 발화, 어느 gap)를 `{project_path}/state.md`의 `loop_history`에 기록
-2. `iteration` +1
+2. `iteration` +1, `current_step`을 `reviewed`로 업데이트
 3. 사용자에게 "[발화 ID]에서 심각 gap이 발견되어 설계를 보완합니다. [이유]" 안내
-4. `{project_path}/artifact-v4.md`에서 해당 항목 수정 후 gap-analyzer 재실행
-
-**덮어쓰기 정책:** 루프백 시 artifact-v4.md, v5.md는 기존 파일을 덮어쓴다. 이전 이터레이션 내용은 `{project_path}/state.md`의 `loop_history`에 gap 원인과 복귀 지점이 기록되므로 이력 추적이 가능하다.
+4. `{project_path}/artifact.md`에서 해당 항목 수정 후 gap-analyzer 재실행
 
 ## 대화 진행 원칙
 
 - 충분성 판단 루프에서 한 번에 한 질문만 한다
-- 각 단계 시작 시 "[단계명]을 시작합니다. [목적 한 줄]"로 맥락을 환기한다. 내부 레이블(A~G)은 사용자 대화에 노출하지 않는다
+- 각 단계 시작 시 "[단계명]을 시작합니다. [목적 한 줄]"로 맥락을 환기한다
 - 사용자가 중간에 다른 질문을 하더라도 현재 단계 완료 후 돌아온다
 
 ## 참조 파일
 
 | 파일 | 내용 |
 |---|---|
-| `references/workflow-steps.md` | 충분성 판단 기준·예시, drafter 연동 절차, F~G 상세 절차 |
+| `references/workflow-steps.md` | 충분성 판단 기준·예시, drafter 연동 절차, gap·확정 상세 절차 |
 | `references/walkthrough-guide.md` | Walk-through 진행 방식 |
 | `references/gap-criteria.md` | gap ①③ 기준 및 심각도 분류 |
-| `references/artifact-schema.md` | 산출물 표 형식 및 1:N 관계 표현 규칙 |
+| `references/artifact-schema.md` | 산출물 표 형식 및 단계별 컬럼 구조 |
 | `references/state-schema.md` | state.md 파일 형식 정의 |

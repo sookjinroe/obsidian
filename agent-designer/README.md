@@ -8,23 +8,34 @@
 
 ```
 대화 (사용자 상태 파악)
-  → 설계 초안 자율 생성
+  → 설계 초안 자율 생성 (발화·요구사항)
   → 초안 확인 및 보완
+  → plugin-dev:plugin-structure 핸드오프 (구성요소·계위 결정)
+  → 커버리지 보완
   → gap 검증
-  → 구성 확정
+  → 확정
 ```
 
-사용자가 아는 만큼 말하면, 플러그인이 그 상태를 파악해 전체 초안을 자율 생성한다. 사용자는 초안을 검토하고 수정하는 역할을 맡는다.
+사용자가 아는 만큼 말하면, 플러그인이 그 상태를 파악해 발화·요구사항 초안을 자율 생성한다. 구성요소·계위 결정은 plugin-dev:plugin-structure가 담당한다. 사용자는 각 단계를 검토하고 수정하는 역할을 맡는다.
+
+## 역할 경계
+
+| 담당 | 작업 | 산출물 |
+|---|---|---|
+| design-session | 맥락 수집, design-drafter 호출, 검토, 커버리지 보완, gap 검증 | persona.md, artifact.md |
+| design-drafter | 발화 + 요구사항 생성 | artifact.md (발화~요구사항 컬럼) |
+| plugin-dev:plugin-structure | 구성요소·계위·소속플러그인 결정 | artifact.md (구성요소 컬럼 추가) |
+| gap-analyzer | artifact.md 기반 ①③ 검증 | gap-report.md |
 
 ## 구성요소
 
 | 구성요소 | 유형 | 역할 |
 |---|---|---|
-| `design-session` | Skill | 사용자 상태 파악 → design-drafter 위임 → 초안 확인 → gap 검증 → 구성 확정 전 과정 진행 |
-| `design-drafter` | Agent | 수집된 맥락으로 페르소나·발화·요구사항·구성요소 전체 초안 자율 생성 |
-| `gap-analyzer` | Agent | 설계 후 자율 검증 — "연결 없음"·"트리거 미정의" gap 탐지 |
-| `requirements-sync` | Skill | 구현 중 요구사항 변경 추적 및 입출력 불일치·도구 미연결·실패 경로 미처리 사후 검증 |
-| `state-reconcile` | Skill | 상태 불일치 시 수동 복원 (`/agent-designer:sync`) |
+| `design-session` | Skill | 전체 설계 흐름 진행 |
+| `design-drafter` | Agent | 발화·요구사항 초안 자율 생성 |
+| `gap-analyzer` | Agent | 설계 후 ①③ gap 탐지 |
+| `requirements-sync` | Skill | 구현 중 요구사항 변경 추적 및 ②④⑤ 사후 검증 |
+| `state-reconcile` | Skill | 상태 불일치 시 수동 복원 |
 | `SessionStart` | Hook | 세션 시작 시 이전 설계 진행 상태 자동 안내 |
 
 ## 다중 프로젝트 지원
@@ -36,12 +47,12 @@
 ├── redshift-analyzer/        # 프로젝트 1
 │   ├── state.md
 │   ├── persona.md
-│   ├── artifact-v1.md ~ v5.md
-│   ├── artifact-final.md
+│   ├── artifact.md
 │   └── gap-report.md
 ├── hr-chatbot/               # 프로젝트 2 (진행 중)
 │   ├── state.md
-│   └── artifact-v1.md ~ v4.md
+│   ├── persona.md
+│   └── artifact.md
 └── slack-notifier/           # 프로젝트 3 (시작 전)
     └── state.md
 ```
@@ -51,22 +62,20 @@
 각 프로젝트 디렉토리 `.claude/agent-designer/{project-name}/` 아래에 저장된다.
 
 ```
-state.md              # 현재 설계 상태
-persona.md            # 페르소나 카드 (초안 생성 완료 시)
-artifact-v1.md        # 발화 목록 (초안 생성 완료 시)
-artifact-v2.md        # + 요구사항 (초안 생성 완료 시)
-artifact-v3.md        # + 구성요소·계위 (초안 생성 완료 시)
-artifact-v4.md        # + 발화 보완 및 확인 수정 (초안 확인 완료 시)
-artifact-v5.md        # + gap 기록 (gap 검증 완료 시)
-artifact-final.md     # 확정본 (구성 확정 완료 시)
-gap-report.md         # gap-analyzer gap 검증 보고서
-eval-set.md           # skill-creator eval 발화 세트 (구현 완료 후 생성)
+state.md          # 현재 설계 상태
+persona.md        # 페르소나 카드 (drafter 완료 시)
+artifact.md       # 단일 산출물 — 단계마다 컬럼 추가
+                  #   drafter 완료: 발화·요구사항
+                  #   plugin-dev 완료: + 구성요소·계위·소속플러그인
+                  #   gap 검증 완료: + gap설명·심각도
+gap-report.md     # gap-analyzer 검증 보고서
+eval-set.md       # skill-creator eval 발화 세트 (구현 완료 후 생성)
 ```
 
 ## 함께 사용하는 플러그인
 
-- **plugin-dev**: 초안 확인 시 구성요소 계위 판단 협업, 구성 확정 이후 구현 담당
-- **skill-creator**: plugin-dev Skill 구현 완료 후 트리거 품질 검증
+- **plugin-dev**: 초안 확인 후 구성요소·계위 결정(plugin-structure), 확정 후 구현(create-plugin) 담당
+- **skill-creator**: plugin-dev Phase 5 완료 후 트리거 품질 검증
 
 ## 사용 방법
 
