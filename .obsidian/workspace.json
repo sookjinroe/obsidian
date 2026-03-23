@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "재무/gap-report.md",
+                "file": "agent-designer/ISSUE-plugin-boundary.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "gap-report"
+              "title": "ISSUE-plugin-boundary"
             }
           }
         ]
@@ -200,6 +200,7 @@
   },
   "active": "17105bd2d7e9fc63",
   "lastOpenFiles": [
+    "재무/gap-report.md",
     "agent-designer/skills/design-session/references/workflow-steps.md.tmp.19928.1774235178015",
     "agent-designer/agents/gap-analyzer.md.tmp.19928.1774235116312",
     "재무/persona.md",
@@ -208,7 +209,6 @@
     "재무/artifact-v3.md",
     "재무/state.md",
     "조직 rnr/Untitled.md",
-    "재무/gap-report.md",
     "재무/artifact-v2.md",
     "재무/artifact-final.md",
     "재무/artifact-v1.md",
@@ -235,7 +235,6 @@
     "agent-designer/skills/requirements-sync/SKILL.md.tmp.27704.1774004907319",
     "agent-designer/agents/design-drafter.md.tmp.27704.1774004833308",
     "agent-designer/agents/design-drafter.md.tmp.27704.1774004821922",
-    "agent-designer/skills/design-session/SKILL.md.tmp.27704.1774004812983",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",
