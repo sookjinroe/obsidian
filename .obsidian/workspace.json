@@ -31,12 +31,12 @@
             "id": "17105bd2d7e9fc63",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "pdf",
               "state": {
-                "path": "조직 rnr"
+                "file": "조직 rnr/가족관계등록부.pdf"
               },
-              "icon": "lucide-file",
-              "title": "조직 rnr"
+              "icon": "lucide-file-text",
+              "title": "가족관계등록부"
             }
           }
         ]
@@ -216,8 +216,9 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "42a2c3edd2492ded",
+  "active": "17105bd2d7e9fc63",
   "lastOpenFiles": [
+    "조직 rnr/사업-오퍼링 협업 업무.md",
     "조직 rnr/가족관계등록부.pdf",
     "조직 rnr/조직 rnr.md",
     "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
@@ -228,7 +229,6 @@
     "03. Offer (3.16~)/Agent component reference.md",
     "03. Offer (3.16~)/Agent design process.md",
     "03. Offer (3.16~)/Agent design process overview.md",
-    "조직 rnr/사업-오퍼링 협업 업무.md",
     "조직 rnr/Untitled.md",
     "agent-designer.zip",
     "03. Offer (3.16~)/ㄴ 에이전트 빌드 사이클의 요구사항 추적 도구.md",
@@ -240,7 +240,6 @@
     "agent-designer-skill-creator-workspace/requirements-sync/eval-review.html",
     "agent-designer-skill-creator-workspace/design-session/eval-review.html",
     "agent-designer-skill-creator-workspace/state-reconcile/trigger-eval.json",
-    "agent-designer-skill-creator-workspace/state-reconcile",
     "agent-designer/ISSUE-plugin-boundary.md",
     "재무/gap-report.md",
     "재무/persona.md",
