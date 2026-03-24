@@ -1,6 +1,6 @@
 ---
 name: Agent Designer — State Reconcile
-description: This skill should be used when the user invokes `/agent-designer:sync`, or says "상태 동기화해줘", "산출물 상태 확인해줘", "현재 설계 상태가 맞는지 확인해줘", "state.md가 이상한 것 같아", "어디까지 진행됐는지 모르겠어". This skill reads all design artifact files, re-derives the consistent current state, reports any inconsistencies, and fixes the state.md file.
+description: "Use this skill when the user explicitly requests a state consistency check or sync — especially when something seems broken or out of sync between sessions. Trigger on: explicit sync commands (""상태 동기화해줘"", /agent-designer:sync), suspecting file inconsistency (""state.md가 이상한 것 같아"", ""state.md랑 artifact.md가 안 맞는 것 같아""), lost track of progress across sessions (""어디까지 진행됐는지 모르겠어"" especially after a session break, ""세션 끊기고 다시 왔는데 뭐가 어떻게 된건지 모르겠어""), or requesting a status audit (""산출물 상태 확인해줘"", ""현재 설계 상태가 맞는지 확인해줘""). Do NOT trigger for: simply continuing work (""설계 이어서 해줘"" → use design-session), asking what to do next (""다음 단계 뭐야?""), or reporting implementation events (""구현 완료됐어"" → use requirements-sync). This skill reads all artifact files, re-derives the correct state, reports inconsistencies, and repairs state.md."
 version: 0.4.0
 argument-hint: "[프로젝트명 (선택, 생략 시 전체 프로젝트 표시)]"
 allowed-tools: Read, Write, Bash

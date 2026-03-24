@@ -52,11 +52,9 @@
     "//1. Study 확장 (2.23~)",
     "//0. Onboarding Study (2.10~)",
     "//간담회준비",
-    "//03. Offer (3.16~)",
-    "//agent-designer",
     "//design-plugin-test",
-    "//조직 rnr",
-    "//재무"
+    "//03. Offer (3.16~)",
+    "//조직 rnr"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",

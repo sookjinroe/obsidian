@@ -1,0 +1,82 @@
+[
+  {
+    "query": "상태 동기화해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "산출물 상태 확인해줘 - redshift-analyzer",
+    "should_trigger": true
+  },
+  {
+    "query": "state.md가 이상한 것 같아, component_added인데 gap 컬럼이 이미 있어",
+    "should_trigger": true
+  },
+  {
+    "query": "어디까지 진행됐는지 모르겠어 - 두 세션 사이에 뭔가 꼬인 것 같아",
+    "should_trigger": true
+  },
+  {
+    "query": "현재 설계 상태가 맞는지 확인해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "hr-chatbot이랑 redshift-analyzer 둘 다 상태 확인해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "state.md랑 artifact.md가 안 맞는 것 같아",
+    "should_trigger": true
+  },
+  {
+    "query": "세션 끊기고 다시 왔는데 뭐가 어떻게 된건지 모르겠어, 동기화 해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "설계 이어서 해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "gap 검증 해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "요구사항이 바뀌었어",
+    "should_trigger": false
+  },
+  {
+    "query": "plugin-dev Phase 5 완료됐어",
+    "should_trigger": false
+  },
+  {
+    "query": "현재 어떤 발화가 있어? artifact.md 보여줘",
+    "should_trigger": false
+  },
+  {
+    "query": "설계 확정해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "다음 단계 뭐야?",
+    "should_trigger": false
+  },
+  {
+    "query": "plugin-dev 핸드오프 어떻게 해?",
+    "should_trigger": false
+  },
+  {
+    "query": "sql-translator 구현 완료됐어",
+    "should_trigger": false
+  },
+  {
+    "query": "Walk-through 해보자",
+    "should_trigger": false
+  },
+  {
+    "query": "에이전트 설계 시작하고 싶어",
+    "should_trigger": false
+  },
+  {
+    "query": "발화 더 뽑아줘",
+    "should_trigger": false
+  }
+]

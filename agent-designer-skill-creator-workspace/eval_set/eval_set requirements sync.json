@@ -1,0 +1,82 @@
+[
+  {
+    "query": "plugin-dev가 구현하다 보니 db 스키마가 우리 설계랑 달라졌어, 요구사항 업데이트해야 할 것 같아",
+    "should_trigger": true
+  },
+  {
+    "query": "sql-translator Skill 구현 완료됐어 - 검증해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "plugin-dev Phase 5 완료됐어, 이제 skill-creator 연결해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "Skill 구현 다 끝났어, 다음 단계는?",
+    "should_trigger": true
+  },
+  {
+    "query": "finalized 설계인데 API 응답 형식이 달라졌어, 요구사항 수정해야 해",
+    "should_trigger": true
+  },
+  {
+    "query": "db-connector 완성됐어 - ②④⑤ 검증해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "고객 요청으로 export 기능 추가해야 해 - 이미 plugin-dev 구현 중인 상황이야",
+    "should_trigger": true
+  },
+  {
+    "query": "구현하다 보니 달라졌어 - input format이 우리가 설계한 거랑 달라서 요구사항 바꿔야 해",
+    "should_trigger": true
+  },
+  {
+    "query": "requirements 추가됐어, allowed-tools에 S3 MCP도 넣어야 해 - plugin-dev한테 전달해야 하는 상황",
+    "should_trigger": true
+  },
+  {
+    "query": "이 구성요소 다 만들었어 - report-generator 완성, 다음 검증 해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "에이전트 설계 시작하고 싶어 - 새 프로젝트",
+    "should_trigger": false
+  },
+  {
+    "query": "설계 이어서 해줘 redshift-analyzer",
+    "should_trigger": false
+  },
+  {
+    "query": "gap 검증 해줘, component_added 상태야",
+    "should_trigger": false
+  },
+  {
+    "query": "상태 동기화해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "설계 변경이 필요해 - 아직 초안 검토 중인데 범위 줄이고 싶어",
+    "should_trigger": false
+  },
+  {
+    "query": "발화 추가해줘, 커버리지 부족한 것 같아",
+    "should_trigger": false
+  },
+  {
+    "query": "어디까지 진행됐는지 모르겠어",
+    "should_trigger": false
+  },
+  {
+    "query": "state.md가 이상한 것 같아",
+    "should_trigger": false
+  },
+  {
+    "query": "Walk-through 해보자",
+    "should_trigger": false
+  },
+  {
+    "query": "구성요소 구조 바꾸고 싶어 - 아직 확정 전인데 Skill 두 개를 하나로 합치자",
+    "should_trigger": false
+  }
+]

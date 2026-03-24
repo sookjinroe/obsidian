@@ -1,6 +1,6 @@
 ---
 name: Agent Designer — Requirements Sync
-description: This skill should be used when the user says "요구사항이 바뀌었어", "이 부분 수정해야 해", "구현하다 보니 달라졌어", "요구사항 추가됐어", "설계 변경이 필요해", "plugin-dev가 [구성요소] 구현 완료했어", "이 구성요소 다 만들었어", "[구성요소명] 완성됐어", "plugin-dev Phase 5 완료됐어", "Skill 구현 다 끝났어", "skill-creator 연결해줘". This skill tracks requirement changes, validates post-implementation gaps (criteria ②④⑤), and prepares skill-creator eval sets after plugin-dev Phase 5 completion.
+description: "Use this skill when the user reports requirement changes or implementation completion AFTER the design has been finalized (i.e., plugin-dev is actively building). Trigger on: discovering spec mismatches during implementation (""구현하다 보니 달라졌어"", ""API 형식이 설계랑 달라"", ""요구사항이 바뀌었어"" when plugin-dev is underway), a component finishing implementation (""[구성요소명] 구현 완료됐어"", ""이 구성요소 다 만들었어"", ""[구성요소명] 완성됐어""), all skills built (""plugin-dev Phase 5 완료됐어"", ""Skill 구현 다 끝났어""), or connecting to skill-creator (""skill-creator 연결해줘""). Do NOT trigger when: the design is still in progress before finalization — changes during the design phase (""아직 초안인데 범위 줄이고 싶어"", ""설계 변경이 필요해"" before finalized) are handled by design-session. Also do NOT trigger for state file sync requests (→ use state-reconcile). This skill tracks post-finalization requirement changes, validates implemented components against criteria ②④⑤, and prepares skill-creator eval sets."
 version: 0.1.0
 allowed-tools: Read, Write
 ---
@@ -54,21 +54,34 @@ plugin-dev의 Phase 5(모든 SKILL.md 작성 완료)가 끝났을 때. artifact.
    - 영향받는 구성요소 중 `implemented` 상태인 것이 있으면 별도 표시 → plugin-dev에 수정 요청 필요
 
 4. **산출물 업데이트**
-   - `{project_path}/artifact.md`에 변경 사항 반영
+
+   변경 유형에 따라 requirements-sync가 직접 쓰는 범위가 다르다.
+
+   **기존 셀 내용 수정 (요구사항 설명·범위 조정):**
+   - 해당 요구사항 행의 내용을 직접 수정한다
    - 변경 이력 섹션에 기록:
      ```markdown
      ## 변경 이력
      | 날짜 | 변경 항목 | 변경 전 | 변경 후 | 이유 |
      ```
 
+   **새 발화·요구사항 생성이 필요한 경우 (구성요소 추가/제거 등):**
+   - 변경 이력만 기록한다. artifact.md 내용을 직접 생성하지 않는다.
+   - 발화·요구사항 재생성은 design-session이 design-drafter를 호출해 처리한다.
+
 5. **재검증 범위 판단 및 재진입 준비**
    - 변경이 Walk-through 결과를 무효화하는가?
 
-   **핵심 처리 경로에 영향 → design-session 재진입 준비:**
-   1. 변경 내용을 `artifact.md`에 반영한다
-   2. `state.md`의 `current_step`을 `reviewed`(구성요소 추가/제거 없는 경우) 또는 `drafting`(구성요소 구조 변경)으로 설정한다
-   3. 사용자에게 안내: "핵심 경로가 변경됐습니다. '설계 이어서 해줘'로 [plugin-dev 핸드오프/gap 검증]부터 재검증을 시작하세요."
-   - design-session은 state.md를 읽어 설정된 단계(drafting 또는 reviewed)부터 자동으로 재개한다
+   **요구사항 내용 변경만 (구성요소 구조 유지, `reviewed`):**
+   1. 해당 요구사항 셀을 직접 수정하고 변경 이력을 기록한다
+   2. `state.md`의 `current_step`을 `reviewed`로 설정한다
+   3. 사용자에게 안내: "요구사항이 변경됐습니다. '설계 이어서 해줘'로 gap 검증을 재실행하세요."
+
+   **구성요소 구조 변경 (추가·제거·계위 변경, `drafting`):**
+   1. 변경 이력만 기록한다. 새 발화·요구사항은 생성하지 않는다.
+   2. `state.md`의 `current_step`을 `drafting`으로 설정한다
+   3. 사용자에게 안내: "구성요소 구조가 변경됐습니다. '설계 이어서 해줘'로 재진입하면 design-drafter가 변경된 범위를 반영해 발화·요구사항을 재생성합니다."
+   - design-session은 state.md를 읽어 `drafting`부터 자동으로 재개한다
 
    **구현 완료된 구성요소에만 영향 → ②④⑤ 즉시 재검증 실행 (트리거 B 흐름으로 처리)**
 

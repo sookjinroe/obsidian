@@ -4,6 +4,26 @@
     "type": "split",
     "children": [
       {
+        "id": "9b77164ec747dcdf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4cc76483eb217a08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "plugin-dev 구성요소별 전체 지침 요약"
+            }
+          }
+        ]
+      },
+      {
         "id": "51ddc37b5758b52d",
         "type": "tabs",
         "children": [
@@ -11,14 +31,12 @@
             "id": "17105bd2d7e9fc63",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "agent-designer/ISSUE-plugin-boundary.md",
-                "mode": "source",
-                "source": false
+                "path": "조직 rnr"
               },
               "icon": "lucide-file",
-              "title": "ISSUE-plugin-boundary"
+              "title": "조직 rnr"
             }
           }
         ]
@@ -75,7 +93,7 @@
             }
           },
           {
-            "id": "439854f256c25e3b",
+            "id": "42a2c3edd2492ded",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,7 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.5
+    "width": 466.5
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -198,43 +216,44 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "17105bd2d7e9fc63",
+  "active": "42a2c3edd2492ded",
   "lastOpenFiles": [
+    "조직 rnr/가족관계등록부.pdf",
+    "조직 rnr/조직 rnr.md",
+    "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
+    "03. Offer (3.16~)/skill-creator 구성요소별 전체 지침 요약.md",
+    "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
+    "agent-designer/GUIDE.md",
+    "03. Offer (3.16~)/design plugin — 요구사항 문서.md",
+    "03. Offer (3.16~)/Agent component reference.md",
+    "03. Offer (3.16~)/Agent design process.md",
+    "03. Offer (3.16~)/Agent design process overview.md",
+    "조직 rnr/사업-오퍼링 협업 업무.md",
+    "조직 rnr/Untitled.md",
+    "agent-designer.zip",
+    "03. Offer (3.16~)/ㄴ 에이전트 빌드 사이클의 요구사항 추적 도구.md",
+    "agent-designer-skill-creator-workspace/eval_set/eval_set requirements sync.json",
+    "agent-designer-skill-creator-workspace/eval_set/eval_set state reconcile.json",
+    "agent-designer-skill-creator-workspace/eval_set/eval_set design session.json",
+    "agent-designer-skill-creator-workspace/eval_set",
+    "agent-designer-skill-creator-workspace/state-reconcile/eval-review.html",
+    "agent-designer-skill-creator-workspace/requirements-sync/eval-review.html",
+    "agent-designer-skill-creator-workspace/design-session/eval-review.html",
+    "agent-designer-skill-creator-workspace/state-reconcile/trigger-eval.json",
+    "agent-designer-skill-creator-workspace/state-reconcile",
+    "agent-designer/ISSUE-plugin-boundary.md",
     "재무/gap-report.md",
-    "agent-designer/skills/design-session/references/workflow-steps.md.tmp.19928.1774235178015",
-    "agent-designer/agents/gap-analyzer.md.tmp.19928.1774235116312",
     "재무/persona.md",
     "재무/artifact-v5.md",
     "재무/artifact-v4.md",
     "재무/artifact-v3.md",
     "재무/state.md",
-    "조직 rnr/Untitled.md",
     "재무/artifact-v2.md",
     "재무/artifact-final.md",
     "재무/artifact-v1.md",
-    "재무",
     "agent-designer/state.md",
     "agent-designer/persona.md",
     "agent-designer/gap-report.md",
-    "agent-designer/artifact-v5.md",
-    "agent-designer/artifact-v4.md",
-    "agent-designer/artifact-v3.md",
-    "agent-designer/artifact-v2.md",
-    "agent-designer/artifact-v1.md",
-    "agent-designer/artifact-final.md",
-    "조직 rnr/사업-오퍼링 협업 업무.md",
-    "조직 rnr/조직 rnr.md",
-    "agent-designer/ISSUE-plugin-boundary.md",
-    "design-plugin-test/design-plugin-test.md",
-    "03. Offer (3.16~)/ㄴ 에이전트 빌드 사이클의 요구사항 추적 도구.md",
-    "03. Offer (3.16~)/design plugin — 요구사항 문서.md",
-    "agent-designer/agents/gap-analyzer.md.tmp.27704.1774005129737",
-    "agent-designer/README.md.tmp.27704.1774004980233",
-    "agent-designer/skills/design-session/references/state-schema.md.tmp.27704.1774004943681",
-    "agent-designer/hooks/hooks.json.tmp.27704.1774004934585",
-    "agent-designer/skills/requirements-sync/SKILL.md.tmp.27704.1774004907319",
-    "agent-designer/agents/design-drafter.md.tmp.27704.1774004833308",
-    "agent-designer/agents/design-drafter.md.tmp.27704.1774004821922",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",

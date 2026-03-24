@@ -1,0 +1,82 @@
+[
+  {
+    "query": "redshift 데이터를 분석하는 에이전트 만들고 싶어. 처음이라 어디서부터 시작해야 할지 모르겠어",
+    "should_trigger": true
+  },
+  {
+    "query": "설계 이어서 해줘 - hr-chatbot 프로젝트 있어",
+    "should_trigger": true
+  },
+  {
+    "query": "우리 팀이 매일 슬랙에 배포 상황 올리는데 이걸 자동화하고 싶어. Claude Code 플러그인으로 에이전트 만들 수 있을까? 설계부터 도와줘",
+    "should_trigger": true
+  },
+  {
+    "query": "gap 검증 한 번 해줘, component_added 상태거든",
+    "should_trigger": true
+  },
+  {
+    "query": "발화 좀 더 뽑아줘, 커버리지가 부족한 것 같아 - artifact.md 보면서 같이 보완하자",
+    "should_trigger": true
+  },
+  {
+    "query": "Walk-through 해보자, 현재 설계 검토하고 싶어",
+    "should_trigger": true
+  },
+  {
+    "query": "설계 확정할게, 이대로 plugin-dev에 넘겨줘",
+    "should_trigger": true
+  },
+  {
+    "query": "에이전트 설계 새로 시작하고 싶어 - 사용자 페르소나 정의부터 해보자 sql-query-agent",
+    "should_trigger": true
+  },
+  {
+    "query": "plugin-dev:plugin-structure 완료됐어, 구성요소 컬럼 채워줬어. 이어서 gap 검증 진행해줘",
+    "should_trigger": true
+  },
+  {
+    "query": "플러그인 설계하고 싶어 - 우리 회사 데이터웨어하우스 조회를 자연어로 할 수 있게",
+    "should_trigger": true
+  },
+  {
+    "query": "상태 동기화해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "plugin-dev Phase 5 완료됐어, skill-creator 연결해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "sql-translator 구현 완료됐어 - 입출력 검증해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "요구사항이 바뀌었어 - plugin-dev가 구현하다 보니 API 스펙이 달랐어",
+    "should_trigger": false
+  },
+  {
+    "query": "state.md랑 artifact.md가 안 맞는 것 같아, 확인해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "이 부분 수정해야 해 - finalized된 설계인데 db 스키마가 달라졌어. 요구사항 업데이트 필요해",
+    "should_trigger": false
+  },
+  {
+    "query": "어디까지 진행됐는지 모르겠어",
+    "should_trigger": false
+  },
+  {
+    "query": "구현하다 보니 달라졌어, 요구사항 업데이트 해줘",
+    "should_trigger": false
+  },
+  {
+    "query": "설계 변경이 필요해 - plugin-dev가 이미 구현 완료한 구성요소인데 스펙이 틀렸어",
+    "should_trigger": false
+  },
+  {
+    "query": "Skill 구현 다 끝났어, 다음 단계 뭐야?",
+    "should_trigger": false
+  }
+]
