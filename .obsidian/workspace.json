@@ -6,6 +6,7 @@
       {
         "id": "9b77164ec747dcdf",
         "type": "tabs",
+        "dimension": 37.878787878787875,
         "children": [
           {
             "id": "4cc76483eb217a08",
@@ -13,30 +14,33 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
+                "file": "03. Offer (3.16~)/feedback&todo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "plugin-dev 구성요소별 전체 지침 요약"
+              "title": "feedback&todo"
             }
           }
         ]
       },
       {
-        "id": "51ddc37b5758b52d",
+        "id": "dfea0d3fe8cc3a07",
         "type": "tabs",
+        "dimension": 62.121212121212125,
         "children": [
           {
-            "id": "17105bd2d7e9fc63",
+            "id": "ffbe6be6669e5b97",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "조직 rnr/가족관계등록부.pdf"
+                "file": "03. Offer (3.16~)/plugin 복잡도 패턴 minimal, standard, advanced.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "가족관계등록부"
+              "icon": "lucide-file",
+              "title": "plugin 복잡도 패턴 minimal, standard, advanced"
             }
           }
         ]
@@ -107,7 +111,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 466.5
+    "width": 292.5
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -216,14 +220,18 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "17105bd2d7e9fc63",
+  "active": "4cc76483eb217a08",
   "lastOpenFiles": [
-    "조직 rnr/사업-오퍼링 협업 업무.md",
+    "03. Offer (3.16~)/plugin 복잡도 패턴 minimal, standard, advanced.md",
+    "03. Offer (3.16~)/feedback&todo.md",
+    "03. Offer (3.16~)/image/image.md",
+    "03. Offer (3.16~)/temp.md",
+    "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
     "조직 rnr/가족관계등록부.pdf",
+    "조직 rnr/사업-오퍼링 협업 업무.md",
     "조직 rnr/조직 rnr.md",
     "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
     "03. Offer (3.16~)/skill-creator 구성요소별 전체 지침 요약.md",
-    "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
     "agent-designer/GUIDE.md",
     "03. Offer (3.16~)/design plugin — 요구사항 문서.md",
     "03. Offer (3.16~)/Agent component reference.md",
@@ -250,9 +258,6 @@
     "재무/artifact-v2.md",
     "재무/artifact-final.md",
     "재무/artifact-v1.md",
-    "agent-designer/state.md",
-    "agent-designer/persona.md",
-    "agent-designer/gap-report.md",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",
