@@ -6,7 +6,7 @@
       {
         "id": "9b77164ec747dcdf",
         "type": "tabs",
-        "dimension": 37.878787878787875,
+        "dimension": 44.06565656565656,
         "children": [
           {
             "id": "4cc76483eb217a08",
@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03. Offer (3.16~)/feedback&todo.md",
+                "file": "조직 rnr/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "feedback&todo"
+              "title": "Untitled"
             }
           }
         ]
@@ -27,7 +27,7 @@
       {
         "id": "dfea0d3fe8cc3a07",
         "type": "tabs",
-        "dimension": 62.12121212121212,
+        "dimension": 55.93434343434344,
         "children": [
           {
             "id": "ffbe6be6669e5b97",
@@ -35,12 +35,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03. Offer (3.16~)/plugin 복잡도 패턴 minimal, standard, advanced.md",
+                "file": "조직 rnr/Untitled 1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "plugin 복잡도 패턴 minimal, standard, advanced"
+              "title": "Untitled 1"
             }
           }
         ]
@@ -222,22 +222,23 @@
   },
   "active": "4cc76483eb217a08",
   "lastOpenFiles": [
-    "03. Offer (3.16~)/plugin 복잡도 패턴 minimal, standard, advanced.md",
+    "조직 rnr/Untitled 1.md",
+    "조직 rnr/Untitled.md",
+    "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
     "03. Offer (3.16~)/feedback&todo.md",
+    "03. Offer (3.16~)/skill-creator 구성요소별 전체 지침 요약.md",
+    "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
+    "03. Offer (3.16~)/plugin 복잡도 패턴 minimal, standard, advanced.md",
     "03. Offer (3.16~)/image/image.md",
     "03. Offer (3.16~)/temp.md",
-    "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
     "조직 rnr/가족관계등록부.pdf",
     "조직 rnr/사업-오퍼링 협업 업무.md",
     "조직 rnr/조직 rnr.md",
-    "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
-    "03. Offer (3.16~)/skill-creator 구성요소별 전체 지침 요약.md",
     "agent-designer/GUIDE.md",
     "03. Offer (3.16~)/design plugin — 요구사항 문서.md",
     "03. Offer (3.16~)/Agent component reference.md",
     "03. Offer (3.16~)/Agent design process.md",
     "03. Offer (3.16~)/Agent design process overview.md",
-    "조직 rnr/Untitled.md",
     "agent-designer.zip",
     "03. Offer (3.16~)/ㄴ 에이전트 빌드 사이클의 요구사항 추적 도구.md",
     "agent-designer-skill-creator-workspace/eval_set/eval_set requirements sync.json",
@@ -257,7 +258,6 @@
     "재무/state.md",
     "재무/artifact-v2.md",
     "재무/artifact-final.md",
-    "재무/artifact-v1.md",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",
