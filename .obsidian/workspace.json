@@ -27,7 +27,7 @@
       {
         "id": "dfea0d3fe8cc3a07",
         "type": "tabs",
-        "dimension": 62.121212121212125,
+        "dimension": 62.12121212121212,
         "children": [
           {
             "id": "ffbe6be6669e5b97",
@@ -97,7 +97,7 @@
             }
           },
           {
-            "id": "42a2c3edd2492ded",
+            "id": "e678aea597a8dc9e",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
