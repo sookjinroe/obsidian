@@ -13,47 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02. SK Chemical (3.6~)/발표노트.md",
+                "file": "02. SK Chemical (3.6~)/메모.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "발표노트"
-            }
-          },
-          {
-            "id": "82b6bcdc8df44a07",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "note/lee.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "lee"
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "00322415b506f1e5",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "26245f3214c436db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "note/roe.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "roe"
+              "title": "메모"
             }
           }
         ]
@@ -110,7 +75,7 @@
             }
           },
           {
-            "id": "e678aea597a8dc9e",
+            "id": "2cb17108fcd0d03c",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -233,10 +198,25 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "82b6bcdc8df44a07",
+  "active": "4cc76483eb217a08",
   "lastOpenFiles": [
-    "02. SK Chemical (3.6~)/발표노트.md",
+    "02. SK Chemical (3.6~)/기능목록 - 소개서로 바꾼 storyline.md",
+    "02. SK Chemical (3.6~)/메모.md",
+    "02. SK Chemical (3.6~)/temp.md",
+    "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/sw개발 agent 제안 (폐기).md",
+    "02. SK Chemical (3.6~)/image/image.md",
+    "02. SK Chemical (3.6~)/Untitled 2.md",
+    "무제.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/frame.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/Untitled.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/04. Agent 포지셔닝 & offer (3.25~).md",
+    "04. Agent 포지셔닝 & offer (3.25~)/agent phase.md",
+    "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/Draft(세부 항목들 임의 작성함).md",
     "02. SK Chemical (3.6~)/02. SK Chemical (3.6~).md",
+    "03. Offer (3.16~)/03. Offer (3.16~).md",
+    "02. SK Chemical (3.6~)/발표노트.md",
+    "04. Agent 포지셔닝 & offer (3.25~)",
+    "cf 정리 temp.md",
     "note/lee.md",
     "note/roe.md",
     "note/note.md",
@@ -247,18 +227,8 @@
     "03. Offer (3.16~)/feedback&todo.md",
     "03. Offer (3.16~)/skill-creator 구성요소별 전체 지침 요약.md",
     "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
-    "03. Offer (3.16~)/image/image.md",
-    "03. Offer (3.16~)/temp.md",
     "조직 rnr/가족관계등록부.pdf",
-    "조직 rnr/사업-오퍼링 협업 업무.md",
-    "조직 rnr/조직 rnr.md",
-    "agent-designer/GUIDE.md",
-    "03. Offer (3.16~)/design plugin — 요구사항 문서.md",
-    "03. Offer (3.16~)/Agent component reference.md",
-    "03. Offer (3.16~)/Agent design process.md",
-    "03. Offer (3.16~)/Agent design process overview.md",
     "agent-designer.zip",
-    "03. Offer (3.16~)/ㄴ 에이전트 빌드 사이클의 요구사항 추적 도구.md",
     "agent-designer-skill-creator-workspace/eval_set/eval_set requirements sync.json",
     "agent-designer-skill-creator-workspace/eval_set/eval_set state reconcile.json",
     "agent-designer-skill-creator-workspace/eval_set/eval_set design session.json",
@@ -266,11 +236,6 @@
     "agent-designer-skill-creator-workspace/state-reconcile/eval-review.html",
     "agent-designer-skill-creator-workspace/requirements-sync/eval-review.html",
     "agent-designer-skill-creator-workspace/design-session/eval-review.html",
-    "agent-designer-skill-creator-workspace/state-reconcile/trigger-eval.json",
-    "agent-designer/ISSUE-plugin-boundary.md",
-    "재무/gap-report.md",
-    "재무/persona.md",
-    "재무/artifact-v5.md",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",
