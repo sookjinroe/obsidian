@@ -4,24 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "9b77164ec747dcdf",
+        "id": "75039a73fe39cb2c",
         "type": "tabs",
         "children": [
           {
-            "id": "4cc76483eb217a08",
+            "id": "d125856745ed2057",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02. SK Chemical (3.6~)/메모.md",
+                "file": "note/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "메모"
+              "title": "Untitled"
+            }
+          },
+          {
+            "id": "f2b04e67f757564f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "02. SK Chemical (3.6~)/deploy.yml.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "deploy.yml"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -75,7 +90,7 @@
             }
           },
           {
-            "id": "2cb17108fcd0d03c",
+            "id": "0c03fdd083676b30",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -105,7 +120,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "조직 rnr/사업-오퍼링 협업 업무.md",
+                "file": "02. SK Chemical (3.6~)/메모.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +130,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "사업-오퍼링 협업 업무 의 백링크"
+              "title": "메모 의 백링크"
             }
           },
           {
@@ -198,10 +213,20 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "4cc76483eb217a08",
+  "active": "f2b04e67f757564f",
   "lastOpenFiles": [
-    "02. SK Chemical (3.6~)/기능목록 - 소개서로 바꾼 storyline.md",
+    "note/Untitled.md",
+    "note/temp.md",
+    "note/note.md",
     "02. SK Chemical (3.6~)/메모.md",
+    "02. SK Chemical (3.6~)/메모-1775211138329.png",
+    "02. SK Chemical (3.6~)/메모-1775210631981.png",
+    "02. SK Chemical (3.6~)/deploy.yml.md",
+    "02. SK Chemical (3.6~)/기능목록 - 소개서로 바꾼 storyline.md",
+    "02. SK Chemical (3.6~)/Untitled.md",
+    "02. SK Chemical (3.6~)/.githubworkflowsdeploy.yml 추가.md",
+    "note/roe.txt",
+    "note/lee.txt",
     "02. SK Chemical (3.6~)/temp.md",
     "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/sw개발 agent 제안 (폐기).md",
     "02. SK Chemical (3.6~)/image/image.md",
@@ -219,14 +244,8 @@
     "cf 정리 temp.md",
     "note/lee.md",
     "note/roe.md",
-    "note/note.md",
     "03. Offer (3.16~)/plugin 복잡도 패턴 minimal, standard, advanced.md",
     "조직 rnr/Untitled.md",
-    "조직 rnr/Untitled 1.md",
-    "03. Offer (3.16~)/plugin-dev 구성요소별 전체 지침 요약.md",
-    "03. Offer (3.16~)/feedback&todo.md",
-    "03. Offer (3.16~)/skill-creator 구성요소별 전체 지침 요약.md",
-    "03. Offer (3.16~)/plugin-dev&skill-creator map.md",
     "조직 rnr/가족관계등록부.pdf",
     "agent-designer.zip",
     "agent-designer-skill-creator-workspace/eval_set/eval_set requirements sync.json",
@@ -234,8 +253,6 @@
     "agent-designer-skill-creator-workspace/eval_set/eval_set design session.json",
     "agent-designer-skill-creator-workspace/eval_set",
     "agent-designer-skill-creator-workspace/state-reconcile/eval-review.html",
-    "agent-designer-skill-creator-workspace/requirements-sync/eval-review.html",
-    "agent-designer-skill-creator-workspace/design-session/eval-review.html",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",
@@ -244,8 +261,6 @@
     "03. Offer (3.16~)/image/scrap-1773649925088.png",
     "03. Offer (3.16~)/image/Untitled-1773637790653.png",
     "03. Offer (3.16~)/image/Untitled-1773636965866.png",
-    "03. Offer (3.16~)/image/Untitled-1773636308743.png",
-    "2. SK Chemical (3.6~)/Draft(세부 항목들 임의 작성함)-1773030614962.png",
     "Untitled.canvas"
   ]
 }
