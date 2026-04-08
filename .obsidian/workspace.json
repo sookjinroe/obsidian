@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "note/Untitled.md",
+                "file": "무제.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
-            }
-          },
-          {
-            "id": "f2b04e67f757564f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "02. SK Chemical (3.6~)/deploy.yml.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "deploy.yml"
+              "title": "무제"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -90,7 +75,7 @@
             }
           },
           {
-            "id": "0c03fdd083676b30",
+            "id": "1f4d14d1d767cb3f",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -104,7 +89,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 292.5
+    "width": 501.5,
+    "collapsed": true
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -213,15 +199,23 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "f2b04e67f757564f",
+  "active": "d125856745ed2057",
   "lastOpenFiles": [
+    "무제-1775627841140.png",
+    "무제-1775627560194.png",
+    "04. Agent 포지셔닝 & offer (3.25~)/전체 논리 흐름.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/Untitled.md",
     "note/Untitled.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/ 메시지 프레임워크.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/조사 지침.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/frame.md",
+    "04. Agent 포지셔닝 & offer (3.25~)/agent phase.md",
+    "02. SK Chemical (3.6~)/deploy.yml.md",
     "note/temp.md",
     "note/note.md",
     "02. SK Chemical (3.6~)/메모.md",
     "02. SK Chemical (3.6~)/메모-1775211138329.png",
     "02. SK Chemical (3.6~)/메모-1775210631981.png",
-    "02. SK Chemical (3.6~)/deploy.yml.md",
     "02. SK Chemical (3.6~)/기능목록 - 소개서로 바꾼 storyline.md",
     "02. SK Chemical (3.6~)/Untitled.md",
     "02. SK Chemical (3.6~)/.githubworkflowsdeploy.yml 추가.md",
@@ -232,20 +226,13 @@
     "02. SK Chemical (3.6~)/image/image.md",
     "02. SK Chemical (3.6~)/Untitled 2.md",
     "무제.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/frame.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/Untitled.md",
     "04. Agent 포지셔닝 & offer (3.25~)/04. Agent 포지셔닝 & offer (3.25~).md",
-    "04. Agent 포지셔닝 & offer (3.25~)/agent phase.md",
     "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/Draft(세부 항목들 임의 작성함).md",
     "02. SK Chemical (3.6~)/02. SK Chemical (3.6~).md",
     "03. Offer (3.16~)/03. Offer (3.16~).md",
     "02. SK Chemical (3.6~)/발표노트.md",
     "04. Agent 포지셔닝 & offer (3.25~)",
     "cf 정리 temp.md",
-    "note/lee.md",
-    "note/roe.md",
-    "03. Offer (3.16~)/plugin 복잡도 패턴 minimal, standard, advanced.md",
-    "조직 rnr/Untitled.md",
     "조직 rnr/가족관계등록부.pdf",
     "agent-designer.zip",
     "agent-designer-skill-creator-workspace/eval_set/eval_set requirements sync.json",
@@ -260,7 +247,6 @@
     "03. Offer (3.16~)/image/무제-1773649985842.png",
     "03. Offer (3.16~)/image/scrap-1773649925088.png",
     "03. Offer (3.16~)/image/Untitled-1773637790653.png",
-    "03. Offer (3.16~)/image/Untitled-1773636965866.png",
     "Untitled.canvas"
   ]
 }
