@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "무제.md",
+                "file": "04. Agent 포지셔닝 & offer (3.25~)/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "무제"
+              "title": "Untitled"
             }
           }
         ]
@@ -89,8 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 501.5,
-    "collapsed": true
+    "width": 501.5
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -201,6 +200,7 @@
   },
   "active": "d125856745ed2057",
   "lastOpenFiles": [
+    "무제.md",
     "무제-1775627841140.png",
     "무제-1775627560194.png",
     "04. Agent 포지셔닝 & offer (3.25~)/전체 논리 흐름.md",
@@ -225,7 +225,6 @@
     "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/sw개발 agent 제안 (폐기).md",
     "02. SK Chemical (3.6~)/image/image.md",
     "02. SK Chemical (3.6~)/Untitled 2.md",
-    "무제.md",
     "04. Agent 포지셔닝 & offer (3.25~)/04. Agent 포지셔닝 & offer (3.25~).md",
     "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/Draft(세부 항목들 임의 작성함).md",
     "02. SK Chemical (3.6~)/02. SK Chemical (3.6~).md",
@@ -246,7 +245,6 @@
     "03. Offer (3.16~)/image/action item-1773652513569.png",
     "03. Offer (3.16~)/image/무제-1773649985842.png",
     "03. Offer (3.16~)/image/scrap-1773649925088.png",
-    "03. Offer (3.16~)/image/Untitled-1773637790653.png",
     "Untitled.canvas"
   ]
 }
