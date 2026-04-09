@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "75039a73fe39cb2c",
+        "id": "a21c2a296a556192",
         "type": "tabs",
         "children": [
           {
-            "id": "d125856745ed2057",
+            "id": "18be61369567900b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04. Agent 포지셔닝 & offer (3.25~)/Untitled.md",
+                "file": "05. 에이전트 개발 방법론/base kb_메시지 프레임워크 + gemini 논문 +a.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "base kb_메시지 프레임워크 + gemini 논문 +a"
             }
           }
         ]
@@ -75,7 +75,7 @@
             }
           },
           {
-            "id": "1f4d14d1d767cb3f",
+            "id": "fc5767d731e33e18",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 501.5
+    "width": 358.5
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -198,18 +198,92 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "d125856745ed2057",
+  "floating": {
+    "id": "5b0dffec3a863b20",
+    "type": "floating",
+    "children": [
+      {
+        "id": "73dcd342270812ac",
+        "type": "window",
+        "children": [
+          {
+            "id": "4af7b03596234724",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d125856745ed2057",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "05. 에이전트 개발 방법론/gemini 도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "gemini 도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구"
+                }
+              }
+            ]
+          },
+          {
+            "id": "4b29d3576fe07e1b",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "eae5734ced0d8814",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "05. 에이전트 개발 방법론/2 gemini 도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "2 gemini 도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 2098,
+        "y": 100,
+        "width": 758,
+        "height": 992,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "18be61369567900b",
   "lastOpenFiles": [
+    "05. 에이전트 개발 방법론/A. 문제 정의 — 에이전트 도입은 왜 실패하는가시장 인식 교정.md",
+    "05. 에이전트 개발 방법론/base kb_메시지 프레임워크 + gemini 논문 +a.md",
+    "05. 에이전트 개발 방법론/claude 프레임워크를 위한 사례모음.md",
+    "05. 에이전트 개발 방법론/gemini 도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구.md",
+    "05. 에이전트 개발 방법론/2 gemini 도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구.md",
+    "05. 에이전트 개발 방법론/claude 메시지 프레임워크 초안.md",
+    "05. 에이전트 개발 방법론/B. 설계 복잡도 증명 재료 — 설계가 결과를 만든다.md",
+    "05. 에이전트 개발 방법론/D. S-Core 방법론 재료 — 우리가 어떻게 하는가.md",
+    "05. 에이전트 개발 방법론/C. 도메인 설계 외부 사례 — 실제로 어떻게 했는가.md",
+    "04. Agent phase 조사 (3.26~)/agent phase matrix.md",
+    "04. Agent phase 조사 (3.26~)/agent phase matrix-1775710125213.png",
+    "04. Agent phase 조사 (3.26~)/agent phase.md",
+    "04. Agent phase 조사 (3.26~)/frame.md",
+    "04. Agent phase 조사 (3.26~)/조사 지침.md",
+    "04. Agent phase 조사 (3.26~)/전체 논리 흐름.md",
+    "04. Agent phase 조사 (3.26~)/ 메시지 프레임워크 사례조사.md",
+    "05. 에이전트 개발 방법론/05. 에이전트 개발 방법론.md",
+    "04. Agent phase 조사 (3.26~)/04. Agent phase 조사 (3.26~).md",
+    "에이전트 개발 방법론.md",
+    "05. 에이전트 개발 방법론",
+    "조직 rnr/조직 rnr.md",
     "무제.md",
     "무제-1775627841140.png",
     "무제-1775627560194.png",
-    "04. Agent 포지셔닝 & offer (3.25~)/전체 논리 흐름.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/Untitled.md",
     "note/Untitled.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/ 메시지 프레임워크.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/조사 지침.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/frame.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/agent phase.md",
     "02. SK Chemical (3.6~)/deploy.yml.md",
     "note/temp.md",
     "note/note.md",
@@ -217,34 +291,20 @@
     "02. SK Chemical (3.6~)/메모-1775211138329.png",
     "02. SK Chemical (3.6~)/메모-1775210631981.png",
     "02. SK Chemical (3.6~)/기능목록 - 소개서로 바꾼 storyline.md",
-    "02. SK Chemical (3.6~)/Untitled.md",
-    "02. SK Chemical (3.6~)/.githubworkflowsdeploy.yml 추가.md",
     "note/roe.txt",
     "note/lee.txt",
-    "02. SK Chemical (3.6~)/temp.md",
-    "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/sw개발 agent 제안 (폐기).md",
-    "02. SK Chemical (3.6~)/image/image.md",
-    "02. SK Chemical (3.6~)/Untitled 2.md",
-    "04. Agent 포지셔닝 & offer (3.25~)/04. Agent 포지셔닝 & offer (3.25~).md",
-    "02. SK Chemical (3.6~)/sw개발 agent 제안 (폐기)/Draft(세부 항목들 임의 작성함).md",
-    "02. SK Chemical (3.6~)/02. SK Chemical (3.6~).md",
-    "03. Offer (3.16~)/03. Offer (3.16~).md",
-    "02. SK Chemical (3.6~)/발표노트.md",
-    "04. Agent 포지셔닝 & offer (3.25~)",
-    "cf 정리 temp.md",
+    "04. Agent phase 조사 (3.26~)",
     "조직 rnr/가족관계등록부.pdf",
     "agent-designer.zip",
     "agent-designer-skill-creator-workspace/eval_set/eval_set requirements sync.json",
     "agent-designer-skill-creator-workspace/eval_set/eval_set state reconcile.json",
     "agent-designer-skill-creator-workspace/eval_set/eval_set design session.json",
     "agent-designer-skill-creator-workspace/eval_set",
-    "agent-designer-skill-creator-workspace/state-reconcile/eval-review.html",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",
     "03. Offer (3.16~)/image/action item-1773652513569.png",
     "03. Offer (3.16~)/image/무제-1773649985842.png",
-    "03. Offer (3.16~)/image/scrap-1773649925088.png",
     "Untitled.canvas"
   ]
 }

@@ -1,0 +1,240 @@
+---
+aliases:
+  - |-
+    claude 
+
+    프레임워크를 위한 심층 조사 보고서
+---
+# Escor 메시지 프레임워크를 위한 심층 조사 보고서
+
+기업 AI 에이전트 도입의 실패율은 **80~95%**에 달하며, 그 지배적 원인은 모델 성능이 아니라 **설계 역량의 부재**다. BCG가 1,000명의 CxO를 대상으로 밝혀낸 성공 공식—알고리즘 10%, 기술·데이터 20%, **사람·프로세스 70%**— [Boston Consulting Group](https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value)은 Escor의 핵심 전제("설계가 차별점이다")를 정면으로 뒷받침한다. 동시에 SOTA 에이전트와 범용 에이전트의 성능 격차는 **3~35배**에 달하며, 그 격차의 상당 부분은 모델이 아닌 **스캐폴딩 설계**에서 발생한다. [Morph](https://www.morphllm.com/swe-bench-pro) "설계 역량"을 차별점으로 명시적으로 포지셔닝한 AI 에이전트 회사는 현재 시장에 존재하지 않아, Escor에게 열린 포지셔닝 영역이다.
+
+---
+
+## 조사 1 — 에이전트 도입은 왜 실패하는가
+
+### 핵심 데이터: 실패는 예외가 아니라 기본값이다
+
+MIT Project NANDA(2025)가 300건 이상의 GenAI 배포를 분석한 결과, **95%의 기업이 측정 가능한 손익 영향을 전혀 만들어내지 못했다**. [Legal.io](https://www.legal.io/articles/5719519/MIT-Report-Finds-95-of-AI-Pilots-Fail-to-Deliver-ROI-Exposing-GenAI-Divide) RAND Corporation(2024)은 AI 프로젝트의 **80% 이상이 프로덕션에 도달하지 못한다**고 밝혔으며, 이는 비-AI IT 프로젝트 실패율의 2배다. [Medium](https://medium.com/@archie.kandala/the-production-ai-reality-check-why-80-of-ai-projects-fail-to-reach-production-849daa80b0f3)[Informatica](https://www.informatica.com/blogs/the-surprising-reason-most-ai-projects-fail-and-how-to-avoid-it-at-your-enterprise.html) BCG(2024)는 59개국 1,000명의 CxO 조사에서 **74%가 AI로부터 실질적 가치를 아직 창출하지 못하고 있다**고 보고했다. [PR Newswire](https://www.prnewswire.com/news-releases/ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value-302285294.html) Gartner는 2027년까지 **에이전틱 AI 프로젝트의 40% 이상이 취소**될 것으로 전망했다. [klover +4](https://www.klover.ai/ai-agents-in-enterprise-market-survey-mckinsey-pwc-deloitte-gartner/)
+
+파일럿 퍼거토리(pilot purgatory) 현상은 구조적이다. McKinsey State of AI 2025에 따르면 **전체 조직의 약 3분의 2가 파일럿 단계에 갇혀** 전사 확산에 실패하고 있다. [Libertify](https://www.libertify.com/interactive-library/state-of-ai-2025-mckinsey-report/) IDC 연구는 더 가혹한 수치를 제시한다: **33개 AI 파일럿 중 프로덕션에 도달하는 것은 4개에 불과**(88% 실패율). [AI Smart Ventures](https://aismartventures.com/posts/why-do-ai-pilots-fail-how-mid-sized-companies-escape-pilot-purgatory/) S&P Global(2025)에 따르면 AI 이니셔티브를 포기한 기업 비율이 2024년 17%에서 2025년 **42%로 급증**했다. [Quicklaunchanalytics +2](https://quicklaunchanalytics.com/bi-blog/why-80-of-ai-projects-fail-before-they-start-its-your-data-foundation/)
+
+DIY 에이전트 빌드의 실패율은 전제한 75%보다 실제로 더 높을 수 있다. MIT NANDA는 내부 자체 개발 AI 솔루션의 성공률이 **약 33%에 불과**(67% 실패)한 반면, 외부 벤더 솔루션은 67%가 성공한다고 밝혔다. [Fortune](https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/) 더 나아가 커스텀 엔터프라이즈 AI 도구 중 **프로덕션에 도달하는 것은 5%에 불과**하다. [Virtualization Review](https://virtualizationreview.com/articles/2025/08/19/mit-report-finds-most-ai-business-investments-fail-reveals-genai-divide.aspx)
+
+### 범용 에이전트의 현실: Microsoft Copilot 사례
+
+Microsoft 365 Copilot은 범용 에이전트의 한계를 상징적으로 보여준다. 출시 2년 이상이 지났지만 **4억 5천만 M365 구독자 중 유료 Copilot 사용자는 약 1,500만 명(3.3%)**에 불과하다. [Substack](https://cioinsights.substack.com/p/the-33-problem-what-microsofts-copilot) Gartner 기업 구매자 조사에서 **IT 리더의 5%만이 Copilot 확대 배포를 추진** 중이었으며, **40%는 파일럿에 머무른 채 확장 계획이 없었다**. [Substack](https://cioinsights.substack.com/p/the-33-problem-what-microsofts-copilot) 직원 수준에서는 **72%가 일상 업무에 Copilot을 통합하지 못하고** 있으며, **57%는 구현 후 빠르게 사용이 감소**했다. [Computerworld](https://www.computerworld.com/article/3542000/microsoft-365-copilot-rollouts-slowed-by-data-security-roi-concerns.html) SharePoint Online 사용자 중 에이전트와 상호작용한 비율은 한 주간 **0.1%**에 그쳤다. [Perspectives](https://www.perspectives.plus/p/microsoft-365-copilot-commercial-failure)
+
+핵심은 모델이 나빠서가 아니라는 점이다. Microsoft 임원 Jared Spataro 자신도 20~30%의 효율 향상을 실질적 ROI로 연결하는 것이 어렵다고 인정했다. [Petri](https://petri.com/microsoft-copilot-adoption-roi/) 숨겨진 비용(E5 업그레이드, Purview DSPM, 보안 애드온)이 TCO를 $30/user 이상으로 끌어올렸고, [Windows Forum](https://windowsforum.com/threads/microsoft-copilot-under-strain-enterprise-roi-and-reliability.400271/) 무엇보다 **워크플로 통합 실패와 변화관리 부재**가 근본 원인이었다.
+
+### 실패 원인 분류: 설계 문제가 지배적이다
+
+다수의 독립 연구를 종합하면 실패 원인 분포는 다음과 같다.
+
+**조직·설계 문제가 50~60%를 차지한다.** RAND Corporation은 "프로젝트가 해결해야 할 문제에 대한 오해와 소통 실패"를 가장 흔한 원인으로 꼽았다. [RAND](https://www.rand.org/content/dam/rand/pubs/research_reports/RRA2600/RRA2680-1/RAND_RRA2680-1.pdf) BCG의 10/20/70 공식은 성공 기업이 자원의 70%를 사람과 프로세스에 투입한다는 것을 보여준다. [MediaBrief](https://mediabrief.com/bcg-ai-adoption-in-2024/) 잘못된 문제 선정, 워크플로 재설계 부재, 정의되지 않은 성공 지표, KPI 미정렬이 여기에 해당한다. **데이터·인프라 문제는 25~30%**로, Gartner는 62%가 데이터 과제를, [Gartner](https://www.gartner.com/en/newsroom/press-releases/2025-06-30-gartner-survey-finds-forty-five-percent-of-organizations-with-high-artificial-intelligence-maturity-keep-artificial-intelligence-projects-operational-for-at-least-three-years) Deloitte는 43%가 데이터 품질을 지적했다. [Informatica](https://www.informatica.com/blogs/the-surprising-reason-most-ai-projects-fail-and-how-to-avoid-it-at-your-enterprise.html) **기술·모델 문제는 10~15%**에 불과하며, MIT NANDA는 "핵심 이슈는 AI 모델의 품질이 아니라 도구와 조직 모두의 학습 격차"라고 명시했다. [Yahoo Finance](https://finance.yahoo.com/news/mit-report-95-generative-ai-105412686.html)
+
+### 한국 시장 특수성
+
+한국 시장은 글로벌 대비 더 극단적인 양극화를 보인다. 중소벤처기업부 기준 **중소기업 AI 도입률은 약 1%**, 대한상공회의소 조사(504개 제조기업)에서 **82.3%가 AI를 미사용**이었다. 대기업 AI 활용률 49.2% 대비 중소기업은 **4.2%**에 그친다. 94.7%의 중소기업이 AI 미도입 상태이며, **80.7%는 "우리 사업에 AI가 불필요하다"**고 응답했다. [ET News](https://www.etnews.com/20251224000231) 장벽의 핵심은 기술이 아니라 **인식과 초기 투자 비용**(68.9%가 1억 원 이하만 투자 의향)이다. [ET News](https://www.etnews.com/20251224000231)
+
+McKinsey의 한국 시장 데이터에 따르면 **50% 이상이 AI 에이전트를 시작조차 하지 않았고**, 40%가 실험 단계, **어떤 기능 영역에서도 '완전 확산' 비율이 10%를 넘지 않는다**. [Nate](https://m.view.nate.com/economy/view/342672/)
+
+### 고객 언어 번역
+
+> **"에이전트 도입이 실패하는 건 모델이 나빠서가 아니라, 업무 문제를 정확히 정의하고 워크플로에 맞게 설계할 역량이 없어서다."**
+
+이 주장은 RAND("문제 정의 오류가 최다 실패 원인"), [InsideAI News](https://insideainews.com/2024/08/14/new-rand-research-why-do-ai-projects-fail/) BCG("성공 기업은 70%를 프로세스·사람에 투자"), [Boston Consulting Group](https://www.bcg.com/press/24october2024-ai-adoption-in-2024-74-of-companies-struggle-to-achieve-and-scale-value) MIT NANDA("모델 품질이 아니라 학습 격차가 핵심"), [Yahoo Finance](https://finance.yahoo.com/news/mit-report-95-generative-ai-105412686.html) Gartner("전략적 실패가 기술적 한계보다 지배적") [klover](https://www.klover.ai/ai-agents-in-enterprise-market-survey-mckinsey-pwc-deloitte-gartner/)의 독립적 연구로 뒷받침된다.
+
+---
+
+## 조사 2 — SOTA 에이전트는 실제로 무엇이 다른가
+
+### SWE-bench로 본 능력 곡선: 2년간 40배 향상
+
+코딩 에이전트 벤치마크 SWE-bench는 SOTA 에이전트의 폭발적 능력 향상을 수치로 보여준다. 2023년 10월 Claude 2의 점수는 **1.96%**였다. [Digital Applied](https://www.digitalapplied.com/blog/devin-ai-autonomous-coding-complete-guide)[DEV Community](https://dev.to/duplys/swe-bench-swe-bench-verified-benchmarks-1cm) 2024년 1분기 SWE-agent + GPT-4가 약 12%로 뛰었고, 같은 해 4분기 Claude 3.5 Sonnet이 **62.2%**에 도달했다. [Manifold](https://manifold.markets/SG/top-swebench-verified-score-in-2025) 2025년 말 Claude 4.5 Opus는 **80.9%**를 기록했다. [LLM Leaderboard](https://llm-stats.com/benchmarks/swe-bench-verified)[Morph](https://www.morphllm.com/swe-benchmark) Stanford AI Index는 이를 "2023년 4.4%에서 2024년 71.7%로, **1년간 16배 향상**"으로 요약했다. [Stanford](https://hai.stanford.edu/ai-index/2025-ai-index-report/technical-performance)
+
+그러나 벤치마크와 실전의 격차는 크다. SWE-bench Verified(익숙한 코드베이스)에서 70~80%를 기록하는 모델이 SWE-bench Pro(낯선 코드베이스)에서는 **23~46%**로, Private 서브셋에서는 **15~18%**로 떨어진다. [Scale](https://labs.scale.com/leaderboard/swe_bench_pro_public) 이 **3~5배 성능 하락**은 실제 기업 배포에서 원시 모델 능력만으로는 부족하다는 것을 의미한다.
+
+### 스캐폴딩 설계가 만드는 10포인트 격차
+
+가장 주목할 데이터는 **같은 모델에서 스캐폴딩 설계만으로 발생하는 성능 차이**다. Claude Opus 4.5는 표준화된 스캐폴딩에서 SWE-bench Pro **45.9%**를 기록하지만, 커스텀 스캐폴딩에서는 **50.2~55.4%**로 올라간다. [Morph](https://www.morphllm.com/swe-bench-pro) OpenAI GPT-5.3-Codex는 커스텀 스캐폴딩으로 SWE-bench Pro **57%**를 달성했지만, 표준 환경의 GPT-5는 41%에 그쳤다. [Morph](https://www.morphllm.com/swe-bench-pro) **모델을 바꾸지 않고도 설계만으로 10포인트 이상의 성능 향상**이 가능하다. 이것이 설계 역량의 프리미엄이다.
+
+### 실제 엔터프라이즈 적용: SOTA 에이전트의 구체적 성과
+
+**Devin(Cognition):** Nubank에서 600만 줄 이상의 모노리스 코드베이스에 걸친 약 10만 개 데이터 클래스 마이그레이션을 수행했다. [Devin](https://devin.ai/enterprise) 원래 1,000명 이상의 엔지니어가 18개월간 수행해야 할 작업을 **8~12배 빠르게, 20배 낮은 비용**으로 완료했다. [Devin](https://devin.ai/enterprise) 대형 은행의 ETL 프레임워크 마이그레이션에서는 파일당 **3~4시간 vs 인간 30~40시간(10배)**의 효율 차이를 보였다. [Cognition](https://cognition.ai/blog/devin-annual-performance-review-2025) PR 병합률은 전년 34%에서 **67%로 두 배** 증가했다. [Cognition](https://cognition.ai/blog/devin-annual-performance-review-2025)[cognition](https://cognition.ai/blog/devin-annual-performance-review-2025)
+
+**Harvey(법률):** 2025년 8월 기준 **ARR $1억**, [CNBC](https://www.cnbc.com/2025/08/04/legal-ai-startup-harvey-revenue.html) AmLaw 100 로펌의 **42%가 고객**이다. [Medium](https://medium.com/@takafumi.endo/how-harvey-built-trust-in-legal-ai-a-case-study-for-builders-786cc23c3b6d)[Artificial Lawyer](https://www.artificiallawyer.com/2025/08/04/harvey-reaches-100m-arr-42-of-amlaw-100/) Vals AI 벤치마크에서 Harvey는 **6개 법률 업무 중 5개에서 변호사 기준 성과를 초과**했으며, 문서 Q&A 정확도는 **94.8%**를 기록했다. [Artificial Lawyer](https://www.artificiallawyer.com/2025/02/27/vals-publishes-results-of-first-legal-ai-benchmark-study/) 변호사들은 Harvey의 커스텀 모델을 범용 모델 대비 **97%의 비율로 선호**했다. [Medium](https://medium.com/@takafumi.endo/how-harvey-built-trust-in-legal-ai-a-case-study-for-builders-786cc23c3b6d) 파워유저는 월간 **36.9시간을 절약**했으며, [Legal IT Insider](https://legaltechnology.com/2025/12/02/the-impact-of-legal-ai-a-deeper-dive-into-the-rsgi-harvey-adoption-report/)[harvey](https://www.harvey.ai/blog/how-harvey-saves-lawyers-time) 한 고객은 200페이지 문서의 신속 분석으로 수백만 유로 규모의 청구를 무효화했다. [Harvey](https://www.harvey.ai/blog/how-harvey-saves-lawyers-time)
+
+**Abridge(의료):** 150개 이상 의료 시스템에 배포되어 연간 **5천만 건의 의료 대화**를 처리한다. [Contrary Research](https://research.contrary.com/company/abridge) Mayo Clinic의 피어리뷰 연구(JAMIA)에서 **인지부하 61% 감소**(NASA-TLX 지수)를 입증했다. [Abridge](https://www.abridge.com/blog/kumc-research-studies) 임상 노트의 **91%를 자동 생성**하며, [Contrary Research](https://research.contrary.com/company/abridge) 환각(hallucination) 탐지율은 경쟁사 82% 대비 **97%**를 달성했다. 의사 1인당 **하루 30분을 절약**하고, [University of Wisconsin](https://www.med.wisc.edu/news/ambient-ai-improves-practitioner-well-being/)[LogicWeb](https://www.logicweb.com/ai/abridge/) Abridge 사용 의사는 **18% 더 많은 환자를 진료**했다. [Fierce Healthcare](https://www.fiercehealthcare.com/ai-and-machine-learning/sharp-healthcare-mainhealth-other-large-systems-report-time-savings-strong)
+
+### 범용 vs SOTA: 격차는 양적이 아니라 질적이다
+
+범용 에이전트(Copilot류)와 SOTA 에이전트의 격차는 단순한 속도 차이가 아니라 **수행 가능한 업무의 종류 자체가 다르다**.
+
+Copilot은 단일 파일 내 자동완성·제안을 하며 코딩 속도를 **30~40% 향상**시킨다. [IntuitionLabs](https://intuitionlabs.ai/articles/chatgpt-vs-copilot-enterprise-comparison) Devin은 멀티파일, 멀티스텝의 완결된 PR을 생성하며 마이그레이션 작업에서 **10~14배 빠른** 결과를 낸다. [Cognition +2](https://cognition.ai/blog/devin-annual-performance-review-2025) Copilot 사용자의 주당 생산성 향상은 **2~10시간**이지만, [RSM US](https://rsmus.com/insights/technology/microsoft/leveraging-microsoft-copilot-agentic-ai.html) Claude Code 헤비유저는 **하루 3시간 이상**의 효율 향상을 보고했다. [Claudecode](https://claudecode.jp/en/news/23665) Harvey의 법률 특화 모델은 6개 업무 중 5개에서 변호사를 능가하지만, [Artificial Lawyer](https://www.artificiallawyer.com/2025/02/27/vals-publishes-results-of-first-legal-ai-benchmark-study/) 범용 LLM은 2~3개 업무에서만 적절한 수준이다.
+
+핵심적으로, Claude Code 엔터프라이즈 트라이얼은 **"AI는 증폭기(amplifier)"**라는 결론을 내렸다. 강한 엔지니어링 팀은 큰 이득을 보지만, 기초가 약한 팀은 **거의 효과를 보지 못한다**. [Claudecode](https://claudecode.jp/en/news/23665) 기술만으로는 안 되고, 그 기술을 활용할 수 있는 설계와 역량이 있어야 한다.
+
+### 멀티에이전트 오케스트레이션의 실제 효과
+
+Anthropic의 멀티에이전트 연구에서 Claude Opus 4 리드 + Claude Sonnet 4 서브에이전트 구성은 Opus 4 단독 대비 **90.2% 더 나은 성과**를 보였다. [Medium](https://medium.com/@yusufbaykaloglu/multi-agent-systems-orchestrating-ai-agents-with-a2a-protocol-19a27077aed8) 도메인 특화 에이전트는 범용 에이전트보다 **37.6% 더 높은 정밀도**를 기록했다(2025 피어리뷰 연구). [Getdynamiq](https://www.getdynamiq.ai/post/multi-agent-ai-systems-definition-benefits-limitations-how-to-build) 다만 2025년 연구(arxiv 2604.02460)는 동일한 컴퓨팅 예산 내에서 단일 에이전트가 멀티에이전트를 능가하는 경우도 있음을 보여주어, [arXiv](https://arxiv.org/html/2604.02460) 오케스트레이션 설계의 정교함이 결과를 좌우한다는 점을 확인시켰다.
+
+---
+
+## 조사 3 — 효과를 어떤 언어로 말해야 하는가
+
+### SOTA 에이전트 회사들의 실제 효과 표현
+
+시장 선도 기업들은 "시간 절약"이나 "비용 절감"을 넘어서는 다층적 가치 언어를 구사한다. 이들의 표현 방식에서 6가지 패턴이 도출된다.
+
+**패턴 1: "불가능했던 것의 가능화."** Palantir는 "몇 년간 풀지 못한 문제를 며칠 만에 해결합니다"( [Gtmfoundry](https://www.gtmfoundry.vc/p/palantirs-bootcamp-gtm-strategy)Ted Mabrey, Head of Global Commercial)라고 표현한다. [Palantir](https://blog.palantir.com/deploying-full-spectrum-ai-in-days-how-aip-bootcamps-work-21829ec8d560?gi=e92b4425c439) Abridge는 18% 더 많은 환자 진료라는 수치로 "존재하지 않았던 의료 접근성"을 이야기한다. [Fierce Healthcare](https://www.fiercehealthcare.com/ai-and-machine-learning/sharp-healthcare-mainhealth-other-large-systems-report-time-savings-strong) Devin은 경제적으로 불가능했던 레거시 마이그레이션을 실행 가능하게 만든 사례를 제시한다. [Devin +2](https://devin.ai/enterprise)
+
+**패턴 2: "관계와 역할의 변화."** Harvey의 고객 참여 책임자 K-Ming Lee는 "Harvey가 제공한 것은 클라이언트와 다른 비즈니스 모델을 논의할 수 있는 관문"이라고 말했다. [Legal IT Insider](https://legaltechnology.com/2025/12/02/the-impact-of-legal-ai-a-deeper-dive-into-the-rsgi-harvey-adoption-report/) Abridge 사용 의사는 "컴퓨터 앞에서 보내는 시간 대신 환자와 연결되는 시간이 늘었다"고 표현한다. [Altais](https://altais.com/blog/abridge-ai-reduce-physician-burnout-enhance-documentation/) ServiceNow는 "바쁜 일을 자동화하고, 인재를 큰 일에 투입하세요"라는 프레임을 사용한다. [ServiceNow](https://www.servicenow.com/products/ai-agents.html)[Ngenioussolutions](https://ngenioussolutions.com/blog/servicenow-ai-agents/)
+
+**패턴 3: "경쟁 우위의 필수 요건."** Harvey의 고객은 "생성 AI가 편의에서 **경쟁적 필수요소**로 진화했다"(Tracey Yurko, CLO)고 표현한다. [Harvey](https://www.harvey.ai)[Harvey](https://www.harvey.ai/blog/how-harvey-saves-lawyers-time) Palantir CEO Alex Karp는 "경쟁사가 경쟁을 멈추는 수준의 제품을 만듭니다"라고 말한다. [Constellation Research](https://www.constellationr.com/blog-news/insights/palantirs-commercial-business-scales-help-ai-boot-camps)
+
+**패턴 4: "의사결정 품질의 변화."** Palantir는 "데이터 사일로에서 실행 가능한 인텔리전스"를, [CanvasBusinessModel](https://canvasbusinessmodel.com/blogs/marketing-strategy/palantir-technologies-marketing-strategy)[FinancialContent](https://markets.financialcontent.com/stocks/article/marketminute-2026-3-6-palantir-shares-surge-as-aip-bootcamp-strategy-cementing-dominance-in-enterprise-ai) Harvey는 "정밀성으로 복잡한 법적 문제를 탐색"한다고 표현한다. [Harvey](https://www.harvey.ai) 이는 속도가 아니라 **판단의 질**에 대한 이야기다.
+
+**패턴 5: "위험 감소."** Harvey 고객은 200페이지 문서 분석으로 수백만 유로 규모의 청구를 무효화했고, [Harvey](https://www.harvey.ai/blog/how-harvey-saves-lawyers-time) Devin은 취약점 수정을 **20배 효율**(1.5분 vs 30분)로 처리한다. [Cognition](https://cognition.ai/blog/devin-annual-performance-review-2025)[cognition](https://cognition.ai/blog/devin-annual-performance-review-2025)
+
+**패턴 6: "조직 역량 자체의 확장."** Cognition의 은행 고객은 $150만 계약을 **자발적으로 10배 이상 확대**했다. [GitHub](https://github.com/swyxio/swyxdotio/issues/540)[swyx](https://www.swyx.io/cognition) Palantir의 순달러 보유율(net dollar retention)은 **134%**로, 고객이 스스로 사용을 확장하는 것 자체가 가치의 증거다. [MLQ](https://mlq.ai/research/palantir-technologies/)
+
+### Palantir AIP 부트캠프: 슬라이드 없는 설득의 구조
+
+Palantir의 AIP 부트캠프는 "증명이 프레젠테이션을 대체한다"는 원칙의 가장 강력한 실증이다. [Gtmfoundry](https://www.gtmfoundry.vc/p/palantirs-bootcamp-gtm-strategy) 고객의 **실제 데이터로 실제 문제를 1~5일 내에 해결**하며, 참가자는 시청자가 아니라 공동 빌더다. [Everest Group +2](https://www.everestgrp.com/palantir-inside-the-category-of-one-forward-deployed-software-engineers-blog/) CTO Shyam Sankar는 "머리로 생각해서는 안 됩니다. 손을 더럽히고 실전에서 싸워야 유스케이스가 프로덕션에 갑니다"라고 말한다. [Whatshotit](https://www.whatshotit.vc/p/whats-in-enterprise-itvc-406)
+
+결과는 놀랍다. **전환율 약 75%**, [FinancialContent](https://markets.financialcontent.com/stocks/article/marketminute-2026-3-6-palantir-shares-surge-as-aip-bootcamp-strategy-cementing-dominance-in-enterprise-ai) **1,300회 이상의 부트캠프** 완료(2024년 4분기 기준), [MLQ](https://mlq.ai/research/palantir-technologies/) 세일즈 사이클을 **12개월에서 며칠로 압축**했다. [FinancialContent](https://markets.financialcontent.com/stocks/article/marketminute-2026-3-6-palantir-shares-surge-as-aip-bootcamp-strategy-cementing-dominance-in-enterprise-ai) 미국 상업 부문 TCV(총계약가치)는 **$13.1억(전년비 342% 증가)**으로, 처음으로 $10억을 돌파했다. Fortune 500 산업 기업은 초기 계약 대비 **5배 확장**, Fortune 100 소매업체는 파일럿에서 **ACV $1,200만**으로 수개월 만에 성장했다. [MLQ](https://mlq.ai/research/palantir-technologies/)
+
+이 모델이 효과적인 이유는 세 가지다. 첫째, 고객 스스로 가치를 경험하면 내부 챔피언이 된다. 둘째, 리스크 인식이 축소된다(대형 계약 전에 가치를 확인). 셋째, 각 부트캠프가 확장 파이프라인을 생성한다("벌써 100개 유스케이스가 떠오릅니다" — 부트캠프 참석자). [Whatshotit](https://www.whatshotit.vc/p/whats-in-enterprise-itvc-406)
+
+### 신뢰도 높은 효과 표현의 조건
+
+B2B 기술 영역에서 가장 설득력 있는 근거 형식을 우선순위로 정리하면:
+
+- **실명 고객과 실명 직책의 구체적 결과** (Harvey의 Dr. Claudia Junker, Bridgewater Associates 등)
+- **정밀한 Before/After 수치** (4시간 → 45초, 3일 → 4시간, 30분 → 1.5분)
+- **자사 적용 결과** (Salesforce가 자사 고객지원에 Agentforce 배포, 84% 자율 해결률; [CSL](https://www.cloudsciencelabs.com/blog/agentforce-roi-how-to-measure-the-business-impact-of-salesforce-ai-agents) Cognition이 "Devin으로 Devin을 만들고 있다 — 한 주에 659개 PR 병합") [Cognition](https://cognition.ai/blog/how-cognition-uses-devin-to-build-devin)
+- **독립적 검증** (Harvey의 RSGI 독립 연구 의뢰, [Harvey](https://www.harvey.ai/resources/reports/harvey-rsgi-report)[Legal IT Insider](https://legaltechnology.com/2025/12/02/the-impact-of-legal-ai-a-deeper-dive-into-the-rsgi-harvey-adoption-report/) Abridge의 KLAS Best 2025, [Altais](https://altais.com/blog/abridge-ai-reduce-physician-burnout-enhance-documentation/) 피어리뷰 논문)
+- **고객 확장을 증거로 제시** (Cognition 은행 고객 10배 확장, [GitHub](https://github.com/swyxio/swyxdotio/issues/540)[swyx](https://www.swyx.io/cognition) Palantir 134% NDR)
+- **한계에 대한 투명한 인정** (Cognition: "Devin은 오늘날 완벽하지 않습니다. 실수를 자주 합니다"; [Substack](https://datasciencelearningcenter.substack.com/p/devin-ai-launches-cognition-labs)[Voicebot.ai](https://voicebot.ai/2024/04/25/cognition-labs-claims-2b-valuation-after-6-months-and-175m-investment-in-generative-ai-coding-assistant-devin/) 이 투명성이 역설적으로 신뢰를 높인다)
+
+### 측정 어려운 효과의 표현법
+
+직접 측정이 어려운 효과를 표현하는 검증된 기법들이 있다. **프록시 지표 활용**(Abridge는 "당일 마감 노트 비율"을 번아웃 감소의 대리 지표로 사용), [Abridge](https://www.abridge.com/blog/kumc-research-studies)[Fierce Healthcare](https://www.fiercehealthcare.com/ai-and-machine-learning/sharp-healthcare-mainhealth-other-large-systems-report-time-savings-strong) **재무적 전환 체인**(시간 절약 → 의사 이직률 감소 → 채용 비용 절감 → $환산), **집합 데이터 + 개별 사례 조합**(Harvey: 40개 고객 설문 [Legal IT Insider](https://legaltechnology.com/2025/12/02/the-impact-of-legal-ai-a-deeper-dive-into-the-rsgi-harvey-adoption-report/) + 수백만 유로 청구 무효화 개별 사례), [Legal IT Insider](https://legaltechnology.com/2025/12/02/the-impact-of-legal-ai-a-deeper-dive-into-the-rsgi-harvey-adoption-report/)[Harvey](https://www.harvey.ai/blog/how-harvey-saves-lawyers-time) **사용량 증가를 가치 증거로 제시**(Harvey 활성 파일 36배 증가, [Medium](https://medium.com/@takafumi.endo/how-harvey-built-trust-in-legal-ai-a-case-study-for-builders-786cc23c3b6d)[Artificial Lawyer](https://www.artificiallawyer.com/2025/08/04/harvey-reaches-100m-arr-42-of-amlaw-100/) Cognition PR 병합률 2배 증가) [Cognition](https://cognition.ai/blog/devin-annual-performance-review-2025)가 그것이다.
+
+---
+
+## 조사 4 — "컨설팅 + 기술 깊이" 포지셔닝의 선례
+
+### Palantir FDE 모델: 가장 가까운 선례
+
+Escor의 모델에 가장 직접적으로 대응하는 선례는 Palantir의 Forward Deployed Engineer(FDE) 모델이다. FDE는 "스타트업 CTO와 유사한 역할: 소규모 팀에서 고위험 프로젝트의 엔드-투-엔드 실행을 소유한다"( [Ronen Horen](https://ronenhoren.com/palantir-sales-playbook-ai-bdrs/)Palantir 채용공고)고 설명된다. [Lever](https://jobs.lever.co/palantir/dab396d4-2f14-4796-aac0-0d82883dccf0) 핵심 차별화 표현은 이것이다: **"컨설턴트와 달리, 우리는 대부분의 조각을 기성 플랫폼에서 조합할 수 있습니다. 매번 바퀴를 재발명할 필요가 없으므로 몇 년에 걸친 누더기 솔루션 대신, 사용자를 강화할 올바른 아키텍처 구성에 집중합니다."** [Palantir](https://blog.palantir.com/a-day-in-the-life-of-a-palantir-forward-deployed-software-engineer-45ef2de257b1?gi=25deb994f001)
+
+Palantir CTO Shy [Medium](https://tao-hpu.medium.com/forward-deployed-engineers-ais-answer-to-the-saas-customization-paradox-1223e6425b6f)am Sankar의 통찰은 Escor에 직접 적용 가능하다: **"요구사항 문서로 풀 수 있는 문제였다면 이미 풀렸을 것입니다."** 이 한 문장이 컨설팅 기반 에이전트 설계의 존재 이유를 설명한다.
+
+Everest Group은 Palantir를 "유일무이한 카테고리(a category of one)"로 분류하며, 세 가지가 동시에 충족될 때 이 위치가 성립한다 [A16z](https://www.a16z.news/p/the-palantirization-of-everything)고 분석했다: (a) 통합 제품 플랫폼, (b) 내장형 엘리트 엔지니어, (c) 미션 크리티컬 환경에서의 검증. "대부분의 회사는 하나, 많아야 둘을 관리합니다. 셋 모두는 아닙니다."
+
+### 컨설팅 + 기술을 묶는 세 가지 메시지 구조
+
+시장에서 컨설팅과 기술 제품을 동시에 파는 회사들은 세 가지 패턴 중 하나를 따른다.
+
+**기술 리드, 서비스로 진입(Palantir, Databricks).** "우리에겐 강력한 플랫폼이 있고, 엔지니어를 내장시켜 당신 환경에서 작동하게 만듭니다." 서비스는 비용 센터가 아니라 R&D 투자로 취급된다. Palantir의 개별 FDE 배포는 "말 그대로 마이너스 무한대의 마진"일 수 있지만, 그것이 플랫폼 개선으로 이어지기 때문에 허용된다.
+
+**결과 리드, 기술은 증거(McKinsey QuantumBlack, BCG GAMMA).** "우리는 비즈니스 문제를 해결합니다. AI를 직접 만들기도 합니다." McKinsey QuantumBlack는 "데이터와 기술의 예측력 + 사람의 창의성과 이해 = **하이브리드 인텔리전스**"라고 표현한다.
+
+**빌더 정체성 리드(Stripe, Twilio).** Stripe의 초기 이름은 **/dev/payments**였다 — 개발자 경로를 회사명으로 쓴 것이다. "7줄의 코드"가 핵심 약속이었다. 핵심은 "기능 비교가 아니라 세계관에 대한 이야기, 시장 점유율이 아니라 시장 창조에 대한 이야기"라는 점이다.
+
+### "설계 역량" 포지셔닝: 열린 영역
+
+현재 AI 에이전트 시장에서 **"설계 역량"을 명시적 차별점으로 포지셔닝한 회사는 사실상 없다**. 대부분은 실행 능력(프로덕션 배포 실적), 도메인 전문성(법률·의료·금융), 플랫폼 폭(에이전트 종류·오케스트레이션), 엔터프라이즈 통합(CRM·ERP 연결)으로 경쟁한다.
+
+가장 가까운 사례는 Distyl AI(전 Palantir FDE인 Arjun이 설립)로, "진정한 FDE 모델을 AI 에이전트에 적용하는 유일한 사람"이라는 암시적 설계 역량 포지셔닝을 한다. Intellectyx는 "전략 주도 접근: AI 에이전트를 비즈니스 결과에 직접 매핑"한다고 표현한다. 그러나 어느 회사도 "설계"를 핵심 브랜드 정체성으로 확립하지는 못했다.
+
+### 성공 조건과 실패 조건
+
+**컨설팅 + 기술 포지셔닝이 성공하려면** 다섯 가지가 필요하다. 첫째, **서비스 아래에 이름 있는 플랫폼이 있어야 한다**. 이름 없는 기술로는 구매자 인식에서 "그냥 또 다른 컨설팅 회사"가 된다. Palantir에는 Gotham, Foundry, AIP가 있었다. 둘째, **서비스를 R&D로 취급**해야 한다 — 매 프로젝트가 플랫폼을 개선하는 구조. 셋째, **엔지니어가 고객을 대면**해야 한다 — 세일즈맨이 아닌 엔지니어가 신뢰를 쌓는다. 넷째, **보여주기가 설명하기를 대체**해야 한다 — 부트캠프, 라이브 데모, 실전 증명. 다섯째, **좁게 시작해서 넓히기** — Palantir는 정보기관에서 시작해 상업으로, Stripe는 개발자에서 엔터프라이즈로 확장했다.
+
+**실패하는 경우는** 뚜렷하다. "좋은 기술은 저절로 팔린다" 신드롬(INSEAD 연구: 26개 B2B 기술 스타트업 중 가장 흔한 실패 패턴), PoC 무덤(대기업 판매의 복잡성을 과소평가), 플랫폼 규율 없는 맞춤 개발의 반복(Accenture가 되어버리는 함정), 그리고 **마케팅 과소투자**(엔지니어링 주도 회사는 매출의 2~5%만 마케팅에 투자하지만 필요한 수준은 8~12%)이다.
+
+---
+
+## 전제 검증 및 조정
+
+### 전제 1: "설계 역량이 핵심 차별점이다" — ✅ 강하게 지지됨
+
+BCG 10/20/70 공식, RAND의 "#1 실패 원인 = 문제 정의 오류", MIT NANDA의 "모델 품질이 아니라 학습 격차", SWE-bench Pro에서 스캐폴딩만으로 10포인트 격차 등 독립적 증거가 수렴한다. 다만 한 가지 조정이 필요하다: "설계 역량"이라는 표현은 고객에게 추상적으로 들릴 수 있다. 선도 기업들은 이를 **구체적 행동으로 번역**한다 — "업무 문제를 정확히 정의", "워크플로에 통합", "프로덕션에서 작동하는 에이전트".
+
+### 전제 2: "SOTA와 범용의 격차가 크다" — ✅ 지지됨, 단 조건부
+
+격차는 실재하며 양적으로 **3~35배**에 달한다. 그러나 **SOTA의 효과는 활용 역량에 비례**한다는 조건이 붙는다. Claude Code 트라이얼에서 헤비유저는 하루 3시간 이상을 절약하지만 라이트유저는 거의 효과를 보지 못했다. Devin도 전문적 셋업(플레이북, 태스크 분해, 지식베이스 구성) 없이 일반적 문제에 적용하면 결과가 빈약했다. 따라서 "SOTA가 좋다"가 아니라 **"SOTA를 제대로 쓰려면 설계가 필요하다"**가 더 정확한 메시지다.
+
+### 전제 3: 한국 시장 특수성 — ⚠️ 추가 고려 필요
+
+한국 시장은 글로벌 대비 두 가지 특수성이 있다. 첫째, **인식 장벽이 기술 장벽보다 크다** — 80.7%가 "AI 불필요"로 응답. 이는 Escor의 메시지가 "왜 에이전트가 필요한가"부터 시작해야 할 수 있음을 의미한다. 둘째, **"슬라이드 없는 부트캠프" 접근의 문화적 적합성**이 불확실하다 — 한국 기업 경영진은 형식적 프레젠테이션을 신뢰의 신호로 인식할 수 있으므로, 부트캠프 모델을 한국 맥락에 맞게 재설계할 필요가 있다.
+
+---
+
+## Escor 메시지 프레임워크 재료
+
+### 고객 인식 교정에 쓸 수 있는 근거
+
+**"에이전트가 기대에 못 미치는 이유"를 설명할 때:**
+
+- MIT 2025: GenAI 파일럿의 95%가 손익 영향 제로 → "대부분의 도입이 실패합니다. 데이터가 그것을 보여줍니다."
+- BCG: 성공 기업의 공식은 알고리즘 10%, 기술 20%, 사람·프로세스 70% → "기술은 전체의 30%입니다."
+- RAND: 가장 흔한 실패 원인은 문제 정의 오류 → "좋은 모델에 잘못된 문제를 넣으면 좋은 답이 나오지 않습니다."
+- Copilot 3.3% 침투율, 72% 통합 실패 → "범용 도구를 붙여넣기하는 것으로는 안 됩니다."
+- MIT: 내부 자체 개발은 33%만 성공, 외부 설계 솔루션은 67% 성공 → "혼자 만드는 것보다 제대로 설계된 것이 2배 성공합니다."
+
+**"SOTA가 왜 다른가"를 설명할 때:**
+
+- SWE-bench: 같은 모델에 설계(스캐폴딩)만 달리해도 10포인트 차이 → "같은 기술도 설계가 다르면 결과가 다릅니다."
+- Devin + Nubank: 1,000명 엔지니어 18개월 작업을 8~12배 빠르게 → "이 수준의 에이전트는 존재합니다."
+- Harvey 97% 선호율 → "범용 모델과 도메인 특화 설계의 격차는 압도적입니다."
+- SWE-bench Verified 80% vs Pro Private 15~18% → "벤치마크 점수와 실전은 다릅니다. 그 간극을 메우는 것이 설계입니다."
+
+### 차별점 표현에 쓸 수 있는 언어
+
+**즉시 사용 가능한 포지셔닝 문장:**
+
+> **"모든 회사가 같은 AI 모델에 접근할 수 있습니다. 차이는 설계에서 나옵니다."**
+
+> **"우리는 에이전트를 판매하지 않습니다. 문제를 진단하고, 에이전트를 설계하고, 프로덕션에서 작동하게 만듭니다."**
+
+> **"파일럿이 아니라 프로덕션을 만듭니다. 첫 날부터."**
+
+> **"몇 년간 풀지 못한 문제를 며칠 안에 해결합니다."** (Palantir 검증된 표현)
+
+> **"좋은 AI를 도입하는 것이 아니라, 맞는 AI를 설계하는 것이 핵심입니다."**
+
+**효과 표현 프레임:**
+
+"이전에는 [X명의 전문가가 Y주간 수행하던 업무]를, 지금은 [Z시간 내에, 더 높은 정확도로] 처리합니다." — Before/After 프레임은 모든 SOTA 회사가 활용하는 가장 신뢰도 높은 구조다.
+
+"우리 고객은 계약을 확대합니다." — 고객 확장률이 모든 설득보다 강하다(Palantir 134% NDR, Cognition 10배 확장).
+
+"시간 절약이 아니라, 할 수 없었던 일이 가능해지는 것입니다." — 효율이 아닌 가능성의 언어.
+
+### 피해야 할 표현과 이유
+
+**절대 사용하지 말 것:** "AI-powered", "최첨단", "혁신적 솔루션", "원스톱", "엔드투엔드", "심리스 통합" — 모든 AI 회사가 이 표현을 사용하며, B2B 구매자의 64%는 브랜드 간 차이를 느끼지 못한다는 연구 결과가 있다. "디지털 트랜스포메이션"은 남용으로 의미가 소실되었다. "독자적 알고리즘"은 블랙박스 불안을 유발한다.
+
+**주의해서 사용할 것:** "시간 절약" 단독 사용 — 모든 AI 회사의 기본 주장이므로 차별화되지 않는다. 반드시 구체적 수치와 함께, 시간 절약 너머의 가치(의사결정 품질, 가능성 확장, 역할 변화)와 묶어야 한다.
+
+"컨설팅" — 이 단어만으로는 Accenture, 딜로이트와 같은 카테고리에 놓인다. "에이전트 설계", "솔루션 아키텍처", "배포 엔지니어링" 등 기술적 전문성을 함의하는 표현이 필요하다.
+
+**대체 원칙:** 형용사를 숫자로 바꾸고("획기적으로" → "10배 빠르게"), 약속을 고객 인용으로 바꾸며("우리는 할 수 있습니다" → "고객 Y가 X를 달성했습니다"), 기능 설명을 Before/After 스토리로 바꾼다.
+
+---
+
+## 추가로 확인이 필요한 것
+
+**1. Escor의 "이름 있는 플랫폼" 유무.** 모든 성공 선례(Palantir Foundry, Harvey의 멀티모델 오케스트레이터)는 이름 있는 제품/플랫폼을 갖고 있다. 이것이 없으면 시장 인식에서 "커스텀 개발 회사"로 분류될 위험이 있다. Escor가 반복 사용하는 내부 프레임워크나 오케스트레이션 도구가 있다면 이름을 부여하고 메시지에 포함시켜야 한다.
+
+**2. 초기 고객의 구체적 결과 데이터.** 메시지 프레임워크의 가장 강력한 무기는 "실명 고객의 구체적 Before/After 수치"다. Escor의 기존 프로젝트에서 측정 가능한 성과 데이터(시간 절감, 비용 절감, 정확도 향상, 처리량 변화)를 확보하고 고객 동의 하에 활용할 수 있는지 확인이 필요하다.
+
+**3. 한국 기업 경영진의 AI 에이전트 인식 수준 실태.** 글로벌 데이터와 한국 데이터의 간극이 크다. 한국 대기업 CIO/CDO가 "에이전트"를 어떻게 인식하는지(챗봇과 동일시하는지, 자동화와 구분하는지) 정성적 조사가 메시지 톤 설정에 필요할 수 있다.
+
+**4. Palantir 부트캠프 모델의 한국 적용 가능성 검증.** 비슷한 모델(무료/저비용 실전 증명 → 본계약 전환)이 한국 B2B 구매 문화에서 작동하는지, 혹은 공식 제안서·PoC 프로세스가 더 적합한지에 대한 현장 검증이 필요하다.
+
+**5. 경쟁 환경 변화 모니터링.** Gartner가 "agent washing"(기존 챗봇/RPA를 에이전트로 리브랜딩)을 지적했다. 수천 개 벤더 중 진정한 에이전틱 기능을 가진 곳은 **약 130개**에 불과하다. 이 수치는 Escor의 "진짜 에이전트를 만든다"는 차별점을 강화하지만, 동시에 시장 정의 자체가 유동적임을 의미한다.
