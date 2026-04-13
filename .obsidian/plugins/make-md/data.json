@@ -38,7 +38,6 @@
   "vaultSelector": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/",
     "//Untitled",
     "//Onboarding Study",
     "//1. ",
@@ -61,6 +60,10 @@
     "//04. Agent 포지셔닝 & offer (4.8~)/04. Agent 포지셔닝 & offer (4.8~)/에이전트 개발 방법론",
     "//에이전트 개발 방법론",
     "//05. 에이전트 개발 방법론",
+    "/",
+    "재무",
+    "//재무/재무/test",
+    "//조직 rnr",
     "//05. 에이전트 개발 방법론 (4.9~)"
   ],
   "expandFolderOnClick": true,
