@@ -14,12 +14,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05. 에이전트 개발 방법론 (4.9~)/프로젝트 사례.md",
+                "file": "05. 에이전트 개발 방법론 (4.9~)/readme.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "프로젝트 사례"
+              "title": "readme"
             }
           }
         ]
@@ -27,7 +27,7 @@
       {
         "id": "3e67888140b262e8",
         "type": "tabs",
-        "dimension": 53.82081686429513,
+        "dimension": 53.820816864295125,
         "children": [
           {
             "id": "416f0d1fd114cc9c",
@@ -97,7 +97,7 @@
             }
           },
           {
-            "id": "5986a98b0bbce1ae",
+            "id": "e139ee42b50bffe9",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -222,9 +222,10 @@
   },
   "active": "1bf6d1af916d9476",
   "lastOpenFiles": [
-    "05. 에이전트 개발 방법론 (4.9~)/temp.md",
-    "05. 에이전트 개발 방법론 (4.9~)/프로젝트 사례.md",
     "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver2.md",
+    "Tags",
+    "05. 에이전트 개발 방법론 (4.9~)/프로젝트 사례.md",
+    "05. 에이전트 개발 방법론 (4.9~)/temp.md",
     "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver1.md",
     "05. 에이전트 개발 방법론 (4.9~)/팔란티어(Palantir) AIP 방법론의 전략적 벤치마킹을 통한 엔터프라이즈 AI 에이전트 도입 프레임워크 소규모·단기 이터레이션 기반의 가치 증명 및 구축형(On-Premise) 전환 설득 전략 분석.md",
     "05. 에이전트 개발 방법론 (4.9~)/인지 차원 기반의 자율형 AI 에이전트 설계 초인지적 통제, 구조적 추론 연산 및 가상 세계 모델을 통한 신뢰성 최적화 전략.md",
@@ -250,7 +251,6 @@
     "agent",
     "무제.base",
     "Untitled.md",
-    "재무/test/test.md",
     "재무/test",
     "무제-1775627841140.png",
     "무제-1775627560194.png",
@@ -262,7 +262,6 @@
     "note/lee.txt",
     "04. Agent phase 조사 (3.26~)",
     "조직 rnr/가족관계등록부.pdf",
-    "agent/agent-designer.zip",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
     "03. Offer (3.16~)/image/action item-1773712295756.png",
