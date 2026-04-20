@@ -4,9 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "5540610ec20b8c68",
+        "id": "c6e6a42b19b4a0e6",
         "type": "tabs",
-        "dimension": 78.16593886462883,
+        "children": [
+          {
+            "id": "175167001a361fa1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "07. AI Agent UI 조사 (4.20~)/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이"
+            }
+          }
+        ]
+      },
+      {
+        "id": "1e0e3bf31e2df2f5",
+        "type": "tabs",
         "children": [
           {
             "id": "1bf6d1af916d9476",
@@ -14,33 +33,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05. 에이전트 개발 방법론 (4.9~)/readme.md",
+                "file": "07. AI Agent UI 조사 (4.20~)/조사 계획.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "readme"
-            }
-          }
-        ]
-      },
-      {
-        "id": "3e67888140b262e8",
-        "type": "tabs",
-        "dimension": 21.83406113537118,
-        "children": [
-          {
-            "id": "416f0d1fd114cc9c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Tags/설득 frame ver1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "설득 frame ver1"
+              "title": "조사 계획"
             }
           }
         ]
@@ -75,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "800",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +95,7 @@
             }
           },
           {
-            "id": "e139ee42b50bffe9",
+            "id": "1bf6e78cfa329074",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -111,7 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 472.5
+    "width": 291.5
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -220,38 +218,45 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "1bf6d1af916d9476",
+  "active": "175167001a361fa1",
   "lastOpenFiles": [
-    "05. 에이전트 개발 방법론 (4.9~)/기업용 AI 에이전트 도입 전략과 시장 포지셔닝 자체 구축(Build)과 외부 도입(Buy)의 교차점 및 다중 에이전트 생태계로의 진화.md",
-    "05. 에이전트 개발 방법론 (4.9~)/도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구.md",
-    "05. 에이전트 개발 방법론 (4.9~)/Escor 메시지 프레임워크 — 재료 수집 문서 v2.md",
-    "05. 에이전트 개발 방법론 (4.9~)/산업 특화형 AI 에이전트의 성공적 구축을 위한 도메인 전문성 통합 및 전방 배치 엔지니어링(FDE) 실무 전략에 관한 연구 보고서.md",
-    "05. 에이전트 개발 방법론 (4.9~)/프레임워크를 위한 사례모음.md",
-    "05. 에이전트 개발 방법론 (4.9~)/인지 공학 및 아키텍처 합성을 통한 에이전트 시스템 구축 엘리시테이션, 치환 아키텍처 및 산업별 설계 최적화 프레임워크.md",
-    "05. 에이전트 개발 방법론 (4.9~)/readme.md",
-    "Tags/claude 메시지 프레임워크 초안.md",
-    "Tags/설득 frame ver1.md",
-    "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver2.md",
-    "05. 에이전트 개발 방법론 (4.9~)/팔란티어(Palantir) AIP 방법론의 전략적 벤치마킹을 통한 엔터프라이즈 AI 에이전트 도입 프레임워크 소규모·단기 이터레이션 기반의 가치 증명 및 구축형(On-Premise) 전환 설득 전략 분석.md",
-    "05. 에이전트 개발 방법론 (4.9~)/프로젝트 사례.md",
+    "07. AI Agent UI 조사 (4.20~)/섹션 6. UI 전략 및 차별화 포인트.md",
+    "07. AI Agent UI 조사 (4.20~)/섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론.md",
+    "07. AI Agent UI 조사 (4.20~)/섹션 2. AI Agent 고도화에 따른 UI의 진화 예측.md",
+    "07. AI Agent UI 조사 (4.20~)/조사 계획.md",
+    "07. AI Agent UI 조사 (4.20~)/섹션 3. 도메인별 UI 구성 차이.md",
+    "07. AI Agent UI 조사 (4.20~)/섹션 4. Agent UI 오픈소스 현황 및 커스터마이징 가능 영역.md",
+    "07. AI Agent UI 조사 (4.20~)/섹션 5. Agent UI 페인포인트.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/프롬프트 요약.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Description 생성 결과 검증.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/api 명세.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/아키텍쳐 설계도.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled-1776663643640.png",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/AI Agent 구성.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/가설 목록.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/삼성전자 DB 필드 Description 생성 AI Agent 개발.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발",
+    "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver3 - 정보계층정리.md",
     "05. 에이전트 개발 방법론 (4.9~)/temp.md",
-    "05. 에이전트 개발 방법론 (4.9~)/도메인 전문가의 판단 전략을 시스템 아키텍처로 전이하는 공학적 경로 FDE와 ACTA 방법론을 통한 AI 에이전트 설계 혁신 연구 보고서.md",
-    "05. 에이전트 개발 방법론 (4.9~)/2 gemini 도메인 특성화 기반의 에이전트 아키텍처 설계 및 인지적 스캐폴딩 통합 방법론 연구.md",
-    "Tags",
-    "05. 에이전트 개발 방법론 (4.9~)/인지 차원 기반의 자율형 AI 에이전트 설계 초인지적 통제, 구조적 추론 연산 및 가상 세계 모델을 통한 신뢰성 최적화 전략.md",
+    "07. AI Agent UI 조사 (4.20~)/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
+    "07. AI Agent UI 조사 (4.20~)/07. AI Agent UI 조사 (4.20~).md",
+    "06. Vertical Agent Prototype (4.17~)/06. Vertical Agent Prototype (4.17~).md",
+    "07. AI Agent UI 조사 (4.20~)",
+    "06. Vertical Agent Prototype (4.17~)/버티컬 에이전트 선정 기준.md",
+    "06. Vertical Agent Prototype (4.17~)/생산성 측정.md",
+    "06. Vertical Agent Prototype (4.17~)/버티컬 에이전트 후보.md",
+    "무제 1.md",
+    "05. 에이전트 개발 방법론 (4.9~)/프로젝트 사례.md",
     "05. 에이전트 개발 방법론 (4.9~)/05. 에이전트 개발 방법론 (4.9~).md",
-    "99. 개념/99. 개념.md",
-    "document archive/[현대차증권] AI 2.0 개발요건정의서(초안)(4.10).md",
-    "document archive/document archive.md",
+    "06. Vertical Agent Prototype/버티컬 에이전트 선정 기준-1776403974297.png",
+    "06. Vertical Agent Prototype (4.17~)",
+    "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver3 - 정보계층정리-1776236477612.png",
+    "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver3 - 정보계층정리-1776236501163.png",
+    "Tags",
     "document archive",
-    "04. Agent phase 조사 (3.26~)/조직 rnr/사업-오퍼링 협업 업무.md",
-    "04. Agent phase 조사 (3.26~)/조직 rnr/Untitled.md",
-    "04. Agent phase 조사 (3.26~)/조직 rnr/조직 rnr.md",
-    "agent/무제.md",
-    "agent/agent.md",
     "agent",
     "무제.base",
-    "Untitled.md",
     "재무/test",
     "무제-1775627841140.png",
     "무제-1775627560194.png",
@@ -260,14 +265,7 @@
     "02. SK Chemical (3.6~)/메모-1775211138329.png",
     "02. SK Chemical (3.6~)/메모-1775210631981.png",
     "note/roe.txt",
-    "note/lee.txt",
-    "04. Agent phase 조사 (3.26~)",
-    "조직 rnr/가족관계등록부.pdf",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
-    "03. Offer (3.16~)/image/에이전트 플랫폼-1773712322317.png",
-    "03. Offer (3.16~)/image/action item-1773712295756.png",
-    "03. Offer (3.16~)/image/action item-1773652513569.png",
-    "03. Offer (3.16~)/image/무제-1773649985842.png",
     "Untitled.canvas"
   ]
 }

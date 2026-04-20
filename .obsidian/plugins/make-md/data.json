@@ -54,7 +54,6 @@
     "//design-plugin-test",
     "//04. Agent 포지셔닝",
     "//04. Agent 포지셔닝 (3.25~)",
-    "//Tags",
     "//04. Agent 포지셔닝 & offer (3.25~)",
     "//04. Agent 포지셔닝 & offer (4.8~)",
     "//04. Agent 포지셔닝 & offer (4.8~)/04. Agent 포지셔닝 & offer (4.8~)/에이전트 개발 방법론",
@@ -63,8 +62,10 @@
     "/",
     "재무",
     "//재무/재무/test",
-    "//조직 rnr",
-    "//05. 에이전트 개발 방법론 (4.9~)"
+    "//06. Vertical Agent Prototype",
+    "//AI Agent UI 조사",
+    "//06. Vertical Agent Prototype (4.17~)",
+    "//07. AI Agent UI 조사 (4.20~)"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
