@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07. AI Agent UI 조사 (4.20~)/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
+                "file": "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이"
+              "title": "Untitled"
             }
           }
         ]
@@ -33,7 +33,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07. AI Agent UI 조사 (4.20~)/조사 계획.md",
+                "file": "07. AI Agent UI 조사 (4.20~)/archive/조사 계획.md",
                 "mode": "source",
                 "source": false
               },
@@ -220,13 +220,18 @@
   },
   "active": "175167001a361fa1",
   "lastOpenFiles": [
-    "07. AI Agent UI 조사 (4.20~)/섹션 6. UI 전략 및 차별화 포인트.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 2. AI Agent 고도화에 따른 UI의 진화 예측.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/삼성전자 DB 필드 Description 생성 AI Agent 개발.md",
     "07. AI Agent UI 조사 (4.20~)/조사 계획.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 3. 도메인별 UI 구성 차이.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 4. Agent UI 오픈소스 현황 및 커스터마이징 가능 영역.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 5. Agent UI 페인포인트.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/섹션 6. UI 전략 및 차별화 포인트.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/archive.md",
+    "07. AI Agent UI 조사 (4.20~)/archive",
+    "07. AI Agent UI 조사 (4.20~)/archive/섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/섹션 2. AI Agent 고도화에 따른 UI의 진화 예측.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/섹션 4. Agent UI 오픈소스 현황 및 커스터마이징 가능 영역.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/섹션 3. 도메인별 UI 구성 차이.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/섹션 5. Agent UI 페인포인트.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
+    "07. AI Agent UI 조사 (4.20~)/archive/조사 계획.md",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled.md",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/프롬프트 요약.md",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Description 생성 결과 검증.md",
@@ -235,11 +240,9 @@
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled-1776663643640.png",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/AI Agent 구성.md",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/가설 목록.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/삼성전자 DB 필드 Description 생성 AI Agent 개발.md",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발",
     "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver3 - 정보계층정리.md",
     "05. 에이전트 개발 방법론 (4.9~)/temp.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
     "07. AI Agent UI 조사 (4.20~)/07. AI Agent UI 조사 (4.20~).md",
     "06. Vertical Agent Prototype (4.17~)/06. Vertical Agent Prototype (4.17~).md",
     "07. AI Agent UI 조사 (4.20~)",
@@ -247,8 +250,6 @@
     "06. Vertical Agent Prototype (4.17~)/생산성 측정.md",
     "06. Vertical Agent Prototype (4.17~)/버티컬 에이전트 후보.md",
     "무제 1.md",
-    "05. 에이전트 개발 방법론 (4.9~)/프로젝트 사례.md",
-    "05. 에이전트 개발 방법론 (4.9~)/05. 에이전트 개발 방법론 (4.9~).md",
     "06. Vertical Agent Prototype/버티컬 에이전트 선정 기준-1776403974297.png",
     "06. Vertical Agent Prototype (4.17~)",
     "05. 에이전트 개발 방법론 (4.9~)/설득 frame ver3 - 정보계층정리-1776236477612.png",
@@ -264,7 +265,6 @@
     "05. 에이전트 개발 방법론 (4.9~)",
     "02. SK Chemical (3.6~)/메모-1775211138329.png",
     "02. SK Chemical (3.6~)/메모-1775210631981.png",
-    "note/roe.txt",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "Untitled.canvas"
   ]
