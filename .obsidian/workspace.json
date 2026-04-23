@@ -4,70 +4,43 @@
     "type": "split",
     "children": [
       {
-        "id": "1e0e3bf31e2df2f5",
+        "id": "30acbea4675f5751",
         "type": "tabs",
+        "dimension": 50,
         "children": [
           {
-            "id": "1bf6d1af916d9476",
+            "id": "8fdb557bbb910b84",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07. AI Agent UI 조사 (4.20~)/archive/섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론.md",
+                "file": "08. 삼성전자 DX AX (4.22~)/4-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론"
+              "title": "4-1"
             }
-          },
-          {
-            "id": "a5e9b64427af8e99",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "07. AI Agent UI 조사 (4.20~)/섹션 4. Agent UI 오픈소스 현황 및 커스터마이징 가능 영역.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "섹션 4. Agent UI 오픈소스 현황 및 커스터마이징 가능 영역"
-            }
-          },
+          }
+        ]
+      },
+      {
+        "id": "1e0e3bf31e2df2f5",
+        "type": "tabs",
+        "dimension": 50,
+        "children": [
           {
             "id": "4bdb1a2516c7e88f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/추출, 구조화 관련 agentic UX.md",
+                "file": "08. 삼성전자 DX AX (4.22~)/요약약.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "추출, 구조화 관련 agentic UX"
-            }
-          }
-        ],
-        "currentTab": 2
-      },
-      {
-        "id": "fa718318b7645945",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "5c540c106e8f1fd7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "07. AI Agent UI 조사 (4.20~)/archive/조사 계획.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "조사 계획"
+              "title": "요약약"
             }
           }
         ]
@@ -124,7 +97,7 @@
             }
           },
           {
-            "id": "1bf6e78cfa329074",
+            "id": "9fc586d1e73afa37",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -138,7 +111,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.5
+    "width": 200
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -247,94 +220,36 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "floating": {
-    "id": "a92d429ebf81d0b9",
-    "type": "floating",
-    "children": [
-      {
-        "id": "cc8af533b66e52e8",
-        "type": "window",
-        "children": [
-          {
-            "id": "a1c2442a5b914e1e",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "175167001a361fa1",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/작업 목표.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "작업 목표"
-                }
-              }
-            ]
-          },
-          {
-            "id": "b54efe781bd6bb73",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "ee8e27af8443f059",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/화면 구성 개요.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "화면 구성 개요"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 1624,
-        "y": 106,
-        "width": 792,
-        "height": 992,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
   "active": "4bdb1a2516c7e88f",
   "lastOpenFiles": [
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/화면 구성 개요.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/추출, 구조화 관련 agentic UX.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/작업 목표.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/프롬프트 요약.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Description 생성 결과 검증.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/api 명세.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/아키텍쳐 설계도.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/AI Agent 구성.md",
+    "08. 삼성전자 DX AX (4.22~)/상세.md",
+    "08. 삼성전자 DX AX (4.22~)/요약약.md",
+    "08. 삼성전자 DX AX (4.22~)/제안 흐름.md",
+    "08. 삼성전자 DX AX (4.22~)/4-4.md",
+    "08. 삼성전자 DX AX (4.22~)/4-1.md",
+    "08. 삼성전자 DX AX (4.22~)/그룹핑.md",
+    "08. 삼성전자 DX AX (4.22~)/사전 질의 회의 상세 정리.md",
+    "08. 삼성전자 DX AX (4.22~)/08. 삼성전자 DX AX (4.22~).md",
+    "08. 삼성전자 DX AX (4.22~)/운영 영역별 실제 업무.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/프로토타입 구성 개요.md",
+    "08. 삼성전자 DX AX (4.22~)",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/가설 목록.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled-1776663643640.png",
-    "07. AI Agent UI 조사 (4.20~)/섹션 5. Agent UI 페인포인트.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 4. Agent UI 오픈소스 현황 및 커스터마이징 가능 영역.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 2. AI Agent 고도화에 따른 UI의 진화 예측.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 6. UI 전략 및 차별화 포인트.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 3+7 통합. UI 아키타입 분류 및 Use case 설계 가이드.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/작업 목표2.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/AI Agent 구성.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/아키텍쳐 설계도.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/api 명세.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Description 생성 결과 검증.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/프롬프트 요약.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/작업 목표.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/temp.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/필드 extractor 관련 agentic UX 원칙.md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/삼성전자 DB 필드 Description 생성 AI Agent 개발.md",
+    "07. AI Agent UI 조사 (4.20~)/조사 계획.md",
     "07. AI Agent UI 조사 (4.20~)/archive/archive.md",
-    "07. AI Agent UI 조사 (4.20~)/archive/Untitled.md",
-    "07. AI Agent UI 조사 (4.20~)/Untitled 1.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론.md",
-    "07. AI Agent UI 조사 (4.20~)/섹션 3. 도메인별 UI 구성 차이.md",
     "07. AI Agent UI 조사 (4.20~)/archive/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
-    "07. AI Agent UI 조사 (4.20~)/07. AI Agent UI 조사 (4.20~).md",
     "07. AI Agent UI 조사 (4.20~)/archive/섹션 6. UI 전략 및 차별화 포인트.md",
     "07. AI Agent UI 조사 (4.20~)/archive/섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론.md",
-    "07. AI Agent UI 조사 (4.20~)/archive/섹션 3. 도메인별 UI 구성 차이.md",
+    "07. AI Agent UI 조사 (4.20~)/07. AI Agent UI 조사 (4.20~).md",
+    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled-1776663643640.png",
     "07. AI Agent UI 조사 (4.20~)/archive",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발",
     "07. AI Agent UI 조사 (4.20~)",
@@ -350,7 +265,6 @@
     "무제-1775627841140.png",
     "무제-1775627560194.png",
     "04. Agent phase 조사 (3.26~)/agent phase matrix-1775710125213.png",
-    "05. 에이전트 개발 방법론 (4.9~)",
     "02. SK Chemical (3.6~)/메모-1775211138329.png",
     "02. SK Chemical (3.6~)/메모-1775210631981.png",
     "03. Offer (3.16~)/image/Untitled-1773732232939.png",
