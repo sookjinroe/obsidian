@@ -6,28 +6,6 @@
       {
         "id": "30acbea4675f5751",
         "type": "tabs",
-        "dimension": 50,
-        "children": [
-          {
-            "id": "8fdb557bbb910b84",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "08. 삼성전자 DX AX (4.22~)/4-1.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "4-1"
-            }
-          }
-        ]
-      },
-      {
-        "id": "1e0e3bf31e2df2f5",
-        "type": "tabs",
-        "dimension": 50,
         "children": [
           {
             "id": "4bdb1a2516c7e88f",
@@ -35,12 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "08. 삼성전자 DX AX (4.22~)/요약약.md",
+                "file": "08. 삼성전자 DX AX (4.22~)/2. 운영 영역 신규 Agent 세부 실행 전략.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "요약약"
+              "title": "2. 운영 영역 신규 Agent 세부 실행 전략"
+            }
+          }
+        ]
+      },
+      {
+        "id": "deab2715f076e645",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8fdb557bbb910b84",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "08. 삼성전자 DX AX (4.22~)/2. 운영 영역 신규 Agent 세부 실행 전략.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2. 운영 영역 신규 Agent 세부 실행 전략"
             }
           }
         ]
@@ -97,7 +95,7 @@
             }
           },
           {
-            "id": "9fc586d1e73afa37",
+            "id": "21265051af519813",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -111,7 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200.5
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -220,17 +218,82 @@
       "github-sync:Sync with Remote": false
     }
   },
+  "floating": {
+    "id": "43ddabfccc0df898",
+    "type": "floating",
+    "children": [
+      {
+        "id": "11023cbc19fb7d83",
+        "type": "window",
+        "children": [
+          {
+            "id": "3bc8044eef10b1ed",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7e74ec3ae756be3f",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "08. 삼성전자 DX AX (4.22~)/2. 운영 영역 신규 Agent 세부 실행 전략.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "2. 운영 영역 신규 Agent 세부 실행 전략"
+                }
+              }
+            ]
+          },
+          {
+            "id": "183bce29f994157b",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "89541d39075e6501",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "08. 삼성전자 DX AX (4.22~)/1. 운영 영역 신규 Agent.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "1. 운영 영역 신규 Agent"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 857,
+        "y": 229,
+        "width": 600,
+        "height": 992,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "4bdb1a2516c7e88f",
   "lastOpenFiles": [
+    "08. 삼성전자 DX AX (4.22~)/1. 운영 영역 신규 Agent.md",
+    "08. 삼성전자 DX AX (4.22~)/2. 운영 영역 신규 Agent 세부 실행 전략.md",
+    "08. 삼성전자 DX AX (4.22~)/페이지별 컨텐츠 정리.md",
+    "08. 삼성전자 DX AX (4.22~)/페이지별 컨텐츠 정리-1776934654977.png",
+    "08. 삼성전자 DX AX (4.22~)/요약.md",
     "08. 삼성전자 DX AX (4.22~)/상세.md",
-    "08. 삼성전자 DX AX (4.22~)/요약약.md",
-    "08. 삼성전자 DX AX (4.22~)/제안 흐름.md",
+    "08. 삼성전자 DX AX (4.22~)/3. 공통 데이터축.md",
     "08. 삼성전자 DX AX (4.22~)/4-4.md",
-    "08. 삼성전자 DX AX (4.22~)/4-1.md",
+    "08. 삼성전자 DX AX (4.22~)/운영 영역별 실제 업무.md",
     "08. 삼성전자 DX AX (4.22~)/그룹핑.md",
     "08. 삼성전자 DX AX (4.22~)/사전 질의 회의 상세 정리.md",
+    "08. 삼성전자 DX AX (4.22~)/Untitled-1776910288024.png",
+    "08. 삼성전자 DX AX (4.22~)/Untitled-1776910042341.png",
+    "08. 삼성전자 DX AX (4.22~)/제안 흐름.md",
     "08. 삼성전자 DX AX (4.22~)/08. 삼성전자 DX AX (4.22~).md",
-    "08. 삼성전자 DX AX (4.22~)/운영 영역별 실제 업무.md",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/프로토타입 구성 개요.md",
     "08. 삼성전자 DX AX (4.22~)",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/가설 목록.md",
@@ -245,10 +308,6 @@
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/삼성전자 DB 필드 Description 생성 AI Agent 개발.md",
     "07. AI Agent UI 조사 (4.20~)/조사 계획.md",
     "07. AI Agent UI 조사 (4.20~)/archive/archive.md",
-    "07. AI Agent UI 조사 (4.20~)/archive/섹션 1. 기존 웹앱 UI와 AI Agent UI의 구조적 차이.md",
-    "07. AI Agent UI 조사 (4.20~)/archive/섹션 6. UI 전략 및 차별화 포인트.md",
-    "07. AI Agent UI 조사 (4.20~)/archive/섹션 7. Use case별 UI 분류 — 설계 가이드 및 방법론.md",
-    "07. AI Agent UI 조사 (4.20~)/07. AI Agent UI 조사 (4.20~).md",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled-1776663643640.png",
     "07. AI Agent UI 조사 (4.20~)/archive",
     "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발",
@@ -265,9 +324,6 @@
     "무제-1775627841140.png",
     "무제-1775627560194.png",
     "04. Agent phase 조사 (3.26~)/agent phase matrix-1775710125213.png",
-    "02. SK Chemical (3.6~)/메모-1775211138329.png",
-    "02. SK Chemical (3.6~)/메모-1775210631981.png",
-    "03. Offer (3.16~)/image/Untitled-1773732232939.png",
     "Untitled.canvas"
   ]
 }
