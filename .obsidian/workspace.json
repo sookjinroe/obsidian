@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "da4ddf6438639c29",
+        "id": "1d93fd38edc81f0e",
         "type": "tabs",
         "children": [
           {
-            "id": "b98ee5f569ca30eb",
+            "id": "f99dcd4207400e72",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/데이터 카탈로그 스터디.md",
+                "file": "10. 데이터 카탈로그 스터디 (5.7~)/tempdesign.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "데이터 카탈로그 스터디"
+              "title": "tempdesign"
             }
           }
         ]
@@ -75,7 +75,7 @@
             }
           },
           {
-            "id": "bd7b8cb45e2a88d2",
+            "id": "87cc96edb2ba6096",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -89,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 449.5
+    "width": 306.5
   },
   "right": {
     "id": "ec5306b7488e05d1",
@@ -198,121 +198,54 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "floating": {
-    "id": "2128861fb4a5d491",
-    "type": "floating",
-    "children": [
-      {
-        "id": "ea060afebaf38c98",
-        "type": "window",
-        "children": [
-          {
-            "id": "ac8355ad922899fc",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "9096257317f25ccb",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "09. 농정 포탈 제안/장 구성.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "장 구성"
-                }
-              },
-              {
-                "id": "dc1147bf112b8819",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "09. 농정 포탈 제안/목차.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "목차"
-                }
-              },
-              {
-                "id": "4253b19aac72fa3c",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "09. 농정 포탈 제안/목차별 세부내용.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "목차별 세부내용"
-                }
-              }
-            ],
-            "currentTab": 1
-          }
-        ],
-        "direction": "vertical",
-        "x": 1920,
-        "y": 0,
-        "width": 960,
-        "height": 1032,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "b98ee5f569ca30eb",
+  "active": "f99dcd4207400e72",
   "lastOpenFiles": [
-    "09. 농정 포탈 제안/목차.md",
-    "09. 농정 포탈 제안/목차별 세부내용.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/데이터 카탈로그 스터디.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/데이터 카탈로그 스터디-1778055685382.png",
+    "10. 데이터 카탈로그 스터디 (5.7~)/10. 데이터 카탈로그 스터디 (5.7~).md",
+    "10. 데이터 카탈로그 스터디 (5.7~)/데이터 카탈로그 스터디.md",
+    "10. 데이터 카탈로그 스터디 (5.7~)/tempdesign.md",
+    "10. 데이터 카탈로그 스터디 (5.7~)",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~).md",
-    "09. 농정 포탈 제안/장 구성.md",
+    "07. AI Agent UI 조사 (4.20~)/07. AI Agent UI 조사 (4.20~).md",
+    "09. 농정 포탈 제안 (5.6~)/09. 농정 포탈 제안 (5.6~).md",
+    "09. 농정 포탈 제안 (5.6~)/개발 업무 세부 내용.md",
+    "09. 농정 포탈 제안 (5.6~)/목차별 세부내용_5장.md",
+    "09. 농정 포탈 제안 (5.6~)/목차별 세부내용_2장.md",
+    "09. 농정 포탈 제안 (5.6~)/개발 업무 세부 내용-1778396790122.png",
+    "09. 농정 포탈 제안 (5.6~)/장 구성.md",
+    "09. 농정 포탈 제안 (5.6~)/RFP_나. 온라인 제안룸 구축.md",
+    "09. 농정 포탈 제안 (5.6~)/컨플 pdf.md",
+    "09. 농정 포탈 제안 (5.6~)/제안룸 에이전트.md",
+    "09. 농정 포탈 제안 (5.6~)/목차별 세부내용_1장.md",
+    "09. 농정 포탈 제안 (5.6~)/이미지/개발 업무 세부 내용-1778312466666.png",
+    "09. 농정 포탈 제안 (5.6~)/이미지/목차별 세부내용_6장-1778298328851.png",
+    "09. 농정 포탈 제안 (5.6~)/목차.md",
+    "09. 농정 포탈 제안 (5.6~)/이미지/개발 업무 세부 내용-1778325635120.png",
+    "09. 농정 포탈 제안 (5.6~)/이미지/개발 업무 세부 내용-1778324613550.png",
+    "09. 농정 포탈 제안 (5.6~)/이미지/개발 업무 세부 내용-1778313874386.png",
+    "09. 농정 포탈 제안 (5.6~)/목차별 세부내용_3장.md",
+    "09. 농정 포탈 제안 (5.6~)/목차별 세부내용_4장.md",
+    "09. 농정 포탈 제안 (5.6~)/목차별 세부내용_6장.md",
+    "09. 농정 포탈 제안 (5.6~)/이미지/목차별 세부내용_3장-1778307636894.png",
+    "09. 농정 포탈 제안 (5.6~)/이미지/목차별 세부내용_4장-1778307614835.png",
+    "09. 농정 포탈 제안 (5.6~)/이미지/목차별 세부내용_1장-1778306421141.png",
+    "09. 농정 포탈 제안 (5.6~)/이미지/이미지.md",
+    "09. 농정 포탈 제안 (5.6~)/이미지/목차별 세부내용_5장-1778236975379.png",
+    "무제 1.md",
+    "09. 농정 포탈 제안 (5.6~)/이미지",
+    "09. 농정 포탈 제안 (5.6~)/장표 구성 초안.md",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/필드 extractor 관련 agentic UX 원칙.md",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/유저플로우.md",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/atlan Agent 조사.md",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/AI-Ready Data Layer 제품 구성 및 포지셔닝.md",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/화면 리스트.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/프로토타입 구성 개요 (1차).md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/프로토타입 설계 (로드맵).md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/작업 목표.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/삼성전자 DB 필드 Description 생성 AI Agent 개발.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/KB.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/Untitled-1777276783531.png",
-    "06. Vertical Agent Prototype (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발/Untitled.md",
-    "09. 농정 포탈 제안/RFP_나. 온라인 제안룸 구축.md",
-    "09. 농정 포탈 제안/09. 농정 포탈 제안.md",
-    "09. 농정 포탈 제안",
-    "Untitled.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/demo 2.md",
-    "08. 삼성전자 DX AX (4.22~)/제안 배경.md",
-    "08. 삼성전자 DX AX (4.22~)/목표치.md",
-    "08. 삼성전자 DX AX (4.22~)/제안 배경-1777535924139.png",
-    "08. 삼성전자 DX AX (4.22~)/제안 배경-1777534874382.png",
-    "08. 삼성전자 DX AX (4.22~)/제안 배경-1777527773177.png",
-    "08. 삼성전자 DX AX (4.22~)/제안 배경-1777526441881.png",
-    "08. 삼성전자 DX AX (4.22~)/08. 삼성전자 DX AX (4.22~).md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/Untitled-1777288800544.png",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/Untitled-1777277323442.png",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/91개 항목 초안.md",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/Description 생성 결과 검증.md",
+    "09. 농정 포탈 제안 (5.6~)",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB",
-    "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/KB/제품 로드맵-1777012356581.png",
-    "08. 삼성전자 DX AX (4.22~)/페이지별 컨텐츠 정리-1776934654977.png",
     "08. 삼성전자 DX AX (4.22~)",
     "07. AI Agent UI 조사 (4.20~)/archive",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)/삼성전자 DB 필드 Description 생성 AI Agent 개발",
     "07. AI Agent UI 조사 (4.20~)",
     "06. 삼성전자 DB 필드 Description 생성 AI Agent 개발 (4.17~)",
     "Tags",
-    "document archive",
-    "agent",
     "Untitled.canvas"
   ]
 }
